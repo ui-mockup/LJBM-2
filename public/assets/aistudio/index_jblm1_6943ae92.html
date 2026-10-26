@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Rasmi Lembaga Juruukur Bahan Malaysia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#002278;--blue:#1f4fa3;--green:#3b8c3f;--yellow:#f5b800;--ink:#111;--soft:#e8edf6;--foot:#d3ddf0;--sans:"DM Sans",Arial,sans-serif;--serif:"Noto Serif",Georgia,serif;--w:1200px;--pad:clamp(16px,8.3vw,100px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.5}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.wrap{max-width:calc(var(--w) + 2*var(--pad));margin:auto;padding-inline:var(--pad)}
+body.big{font-size:118%}
+/* header */
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #ddd}
+.hd{display:flex;align-items:center;gap:20px;padding:6px clamp(16px,4vw,50px)}
+.brand{display:flex;align-items:center;gap:8px;min-width:0}
+.crest{width:46px;height:46px;border-radius:50%;flex:none}
+.brand small{display:block;font-family:var(--serif);font-size:10px}
+.brand b{display:block;font-family:var(--serif);font-size:15px;line-height:1.1;text-transform:uppercase}
+.brand i{font-style:normal;font-family:var(--serif);font-size:12px}
+.hr{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.util{display:flex;gap:18px;font-size:11px;align-items:center}
+.util a:hover,.nav a:hover,.nav button:hover{text-decoration:underline}
+.nav{display:flex;align-items:center;gap:6px;font-family:var(--serif);font-size:11px;font-weight:600;border-top:1px solid #ccc;padding-top:6px;width:100%;justify-content:flex-end}
+.nav>li{list-style:none;position:relative}
+.nav a,.nav button{padding:6px 14px;display:inline-flex;align-items:center;gap:6px}
+.nav .sub{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #ccc;box-shadow:0 4px 10px #0002;min-width:200px;z-index:5}
+.nav li.open .sub{display:block}
+.sub a{display:block;padding:9px 14px;font-family:var(--sans);font-weight:400;font-size:13px}
+.sub a:hover{background:var(--soft)}
+.nav .sep{width:1px;height:20px;background:#ccc;margin-inline:6px}
+.sbtn{padding:6px}
+.ham{display:none;margin-left:auto;width:42px;height:42px;font-size:26px}
+#sbar{display:none;background:var(--soft);padding:10px clamp(16px,4vw,50px)}
+#sbar.on{display:flex;gap:8px}
+#sbar input{flex:1;padding:10px;border:1px solid #888;font:inherit}
+#sbar button{background:var(--navy);color:#fff;padding:0 18px}
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:420px;background:var(--navy);overflow:hidden}
+.slide{display:none;grid-column:1/-1;grid-template-columns:1fr 1fr}
+.slide.on{display:grid}
+.hero .img{background:linear-gradient(180deg,#f7a83b 0%,#e7ad7a 28%,#8c8f9a 60%,#4d5560 100%);position:relative;min-height:300px}
+.hero .img svg{position:absolute;inset:0;width:100%;height:100%}
+.hero .txt{background:var(--navy);color:#fff;padding:60px clamp(20px,4vw,50px);display:flex;flex-direction:column;justify-content:center}
+.txt h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.4vw,40px);line-height:1.2;margin-bottom:22px}
+.txt p{font-size:17px;max-width:480px;margin-bottom:26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.b1,.b2{padding:12px 20px;font-size:16px;border:1px solid #fff}
+.b1{background:#fff;color:var(--ink)}.b2{color:#fff}
+.b1:hover{background:var(--yellow)}.b2:hover{background:#fff2;}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:22px;height:22px;background:#fff;border:1px solid #888;font-size:15px;line-height:1;z-index:3;display:grid;place-items:center}
+.arr:hover{background:var(--yellow)}
+.hero .arr.l{left:0}.hero .arr.r{right:0}
+/* sections */
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.3vw,38px);line-height:1.2}
+.sec{padding:80px 0}
+.title{display:flex;align-items:center;gap:30px;margin-bottom:40px}
+.title:after{content:"";flex:1;height:3px;background:var(--blue)}
+.cwrap{position:relative}
+.track{display:flex;gap:16px;overflow:hidden;scroll-behavior:smooth}
+.card{flex:0 0 calc((100% - 32px)/3);height:300px;position:relative;background-size:cover;overflow:hidden}
+.card .ph{position:absolute;inset:0;width:100%;height:100%}
+.card .cap{position:absolute;right:0;bottom:0;width:76%;height:77%;padding:22px 20px;color:#fff;display:flex;flex-direction:column;justify-content:flex-start;gap:8px}
+.card .cap h3{font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.25}
+.card .cap p{font-size:14px}
+.card:hover .cap{filter:brightness(1.12)}
+.c-b{background:var(--blue)}.c-g{background:var(--green)}.c-y{background:var(--yellow);color:var(--ink)!important}
+.sv-arr{position:absolute;top:50%;width:22px;height:22px;background:var(--soft);border:1px solid #aaa;display:grid;place-items:center;z-index:3;font-size:15px}
+.dots{display:flex;justify-content:center;gap:5px;margin-top:30px}
+.dots button{width:10px;height:5px;background:#aaa}
+.dots button.on{width:42px;background:#888}
+.news{background:var(--soft)}
+.nh{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.dark{background:#1a1a1a;color:#fff;padding:12px 16px;font-size:15px}.dark:hover{background:var(--navy)}
+.ng{display:grid;grid-template-columns:230px 1fr;gap:16px}
+.tabs{display:flex;flex-direction:column;gap:12px}
+.tabs button{padding:14px;border:1px solid #333;font-size:16px;background:transparent}
+.tabs button:hover{background:#fff}
+.tabs button[aria-selected=true]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-content:start}
+.n{display:block}
+.n .th{aspect-ratio:1/.72;background:#fff;overflow:hidden;border:1px solid #ddd}
+.n .th svg{width:100%;height:100%}
+.n time{display:flex;gap:8px;align-items:center;font-size:13px;margin:10px 0 4px}
+.n h3{font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.3;margin-bottom:6px}
+.n:hover h3{color:var(--blue);text-decoration:underline}
+.n p{font-size:16px;color:#222}
+#empty{display:none;grid-column:1/-1;padding:30px}
+/* notice */
+.notice{padding:50px 0 20px;overflow:hidden}
+.nv{position:relative;display:flex;justify-content:center}
+.ns{display:none;width:min(100%,830px);border-top:1px solid #333;border-bottom:1px solid #333;padding:30px 20px;text-align:center;min-height:360px;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.ns.on{display:flex}
+.ns h3{font-family:Arial,sans-serif;font-size:clamp(22px,3.2vw,38px);line-height:1.25;font-weight:700}
+.ns .pill{display:inline-block;background:var(--blue);color:#fff;border-radius:20px;padding:2px 22px;margin-inline:6px}
+.ns hr{width:60%;border:0;border-top:3px solid #222}
+.ns .row{font-weight:700;font-size:20px}
+.ns .soc{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center;font-size:14px}
+.side{position:absolute;top:10px;bottom:10px;width:min(14vw,160px);background:linear-gradient(135deg,#0d2a6e,#2a5bb8)}
+.side.l{left:0}.side.r{right:0;background:#2b5ad0;color:#fff;font:700 40px Arial;padding:20px;overflow:hidden}
+.nv .arr{background:var(--soft)}
+/* partners */
+.partners{text-align:center;padding:50px 0 60px}
+.partners p{font-size:13px;color:#2b4b88;margin-bottom:34px}
+.pg{display:grid;grid-template-columns:repeat(5,1fr);gap:26px 10px;max-width:880px;margin:auto}
+.pg a{height:100px;display:grid;place-items:center;font-weight:800;font-size:26px;font-style:italic;transition:transform .15s}
+.pg a:hover{transform:scale(1.07)}
+/* footer */
+footer{background:var(--foot)}
+.fg{display:grid;grid-template-columns:1.25fr 1fr 1fr .8fr;gap:30px;padding:30px 0 40px}
+.fg h4{font-family:var(--serif);font-weight:600;font-size:21px;margin:18px 0 16px}
+.fg ul{list-style:none;display:grid;gap:12px;font-size:14px}
+.fg a:hover{text-decoration:underline}
+.two{columns:2;column-gap:14px}.two li{margin-bottom:12px;break-inside:avoid}
+.ct{display:grid;gap:10px;font-size:14px;margin-top:16px}
+.soc2{display:flex;gap:22px;margin-top:30px}
+.soc2 a{width:22px;height:22px;display:grid;place-items:center;font-size:13px;border:1.5px solid var(--ink);border-radius:5px;font-weight:700}
+.st{font-size:14px}.st div{display:flex;justify-content:space-between;gap:10px}
+.st p{margin-top:28px;font-weight:700}
+.bar{background:#111;color:#fff;font-size:12px;padding:10px 0}
+.bar .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:none;padding-inline:clamp(16px,4vw,50px)}
+.bar nav{display:flex;gap:18px;align-items:flex-end}
+.bar a:hover{text-decoration:underline}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 20px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:99;text-align:center}
+#toast.on{opacity:1}
+/* modal */
+#md{display:none;position:fixed;inset:0;background:#000a;z-index:90;place-items:center;padding:16px}
+#md.on{display:grid}
+#md div{background:#fff;max-width:520px;width:100%;padding:28px}
+#md h3{font-family:var(--serif);margin-bottom:10px}
+#md p{margin-bottom:18px}
+/* tablet / mobile */
+@media(max-width:1000px){
+ .card{flex-basis:calc((100% - 16px)/2)}
+ .ng{grid-template-columns:1fr}.tabs{flex-direction:row;flex-wrap:wrap}.tabs button{flex:1 1 140px}
+ .list{grid-template-columns:repeat(2,1fr)}
+ .fg{grid-template-columns:1fr 1fr}
+ .nav{font-size:10px}.nav a,.nav button{padding:6px 8px}
+ .side{display:none}
+}
+@media(max-width:820px){
+ .ham{display:block}
+ .hr{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:2px solid var(--navy);padding:10px 16px;align-items:stretch;max-height:80vh;overflow:auto}
+ .hr.on{display:flex}
+ .util{flex-wrap:wrap;order:2;gap:12px}
+ .nav{flex-direction:column;align-items:stretch;font-size:15px;border:0}
+ .nav .sep{display:none}
+ .nav .sub{position:static;box-shadow:none;border:0;border-left:3px solid var(--blue)}
+ .hd{position:relative}
+ .slide.on{grid-template-columns:1fr}
+ .hero .img{min-height:220px}
+ .hero .txt{padding:36px 20px}
+ .brand b{font-size:12px}.crest{width:38px;height:38px}
+}
+@media(max-width:600px){
+ .sec{padding:50px 0}
+ .card{flex-basis:100%}
+ .list{grid-template-columns:1fr}
+ .fg{grid-template-columns:1fr}
+ .pg{grid-template-columns:repeat(2,1fr)}
+ .title{gap:14px}
+ .ns .row{font-size:15px}
+}
+</style>
+</head>
+<body>
+<!-- Crest symbol (stand-in for the official Jata Negara and LJBM logos, replace with originals) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="crest" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" fill="#f5c400" stroke="#6b5200" stroke-width="2"/><circle cx="24" cy="24" r="15" fill="none" stroke="#6b5200" stroke-width="2"/><path d="M24 12 34 34H14Z" fill="none" stroke="#6b5200" stroke-width="2.5"/></symbol>
+<symbol id="cal" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3" stroke="currentColor"/></symbol>
+</defs></svg>
+
+<header>
+ <div class="hd">
+  <a class="brand" href="#top" aria-label="Laman utama LJBM">
+   <svg class="crest" style="background:#fff"><use href="#crest"/></svg><svg class="crest"><use href="#crest"/></svg>
+   <span><small data-t="portal">Portal Rasmi</small><b>Lembaga Juruukur Bahan Malaysia</b><i>Menteri Kerja Raya</i></span>
+  </a>
+  <button class="ham" id="ham" aria-label="Menu" aria-expanded="false">☰</button>
+  <div class="hr" id="hr">
+   <div class="util">
+    <a href="#faq" data-modal="Soalan Lazim">? Soalan Lazim</a>
+    <a href="#aduan" data-modal="Aduan dan Maklum Balas">Aduan dan Maklum Balas</a>
+    <a href="#peta" data-modal="Peta Laman">Peta Laman</a>
+    <a href="#hubungi" data-modal="Hubungi Kami">Hubungi Kami</a>
+    <button class="sbtn" id="sb" aria-label="Carian">&#128269;</button>
+   </div>
+   <ul class="nav" id="nav">
+    <li><a href="#top">Utama</a></li>
+    <li><button aria-expanded="false">Info Korporat ⌄</button><div class="sub"><a href="#">Latar Belakang</a><a href="#">Visi dan Misi</a><a href="#">Carta Organisasi</a></div></li>
+    <li><button aria-expanded="false">Awam ⌄</button><div class="sub"><a href="#">Semakan Juruukur Bahan</a><a href="#">Muat Turun</a></div></li>
+    <li><button aria-expanded="false">Perkhidmatan Pendaftaran ⌄</button><div class="sub"><a href="#perkhidmatan">Pendaftaran APC</a><a href="#perkhidmatan">Pendaftaran Baharu</a><a href="#perkhidmatan">Syarikat/Firma</a></div></li>
+    <li><button aria-expanded="false">Pusat Info ⌄</button><div class="sub"><a href="#berita">Pengumuman</a><a href="#berita">Buletin</a><a href="#berita">Laporan Tahunan</a></div></li>
+    <li><button aria-expanded="false">Hubungi Kami ⌄</button><div class="sub"><a href="#hubungi" data-modal="Hubungi Kami">Maklumat Perhubungan</a><a href="#aduan" data-modal="Aduan dan Maklum Balas">Aduan</a></div></li>
+    <li class="sep" aria-hidden="true"></li>
+    <li><button id="lang" aria-pressed="false">Bahasa Malaysia ⌄</button></li>
+    <li><button id="acc" aria-label="Aksesibiliti: besarkan teks" aria-pressed="false">♿</button></li>
+   </ul>
+  </div>
+ </div>
+ <form id="sbar" role="search"><input id="q" type="search" placeholder="Cari pengumuman, tender, buletin..." aria-label="Carian"><button>Cari</button></form>
+</header>
+
+<main id="top">
+<section class="hero" aria-roledescription="carousel" aria-label="Sorotan">
+ <div class="slide on"><div class="img"><svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#3c434d"><rect x="40" y="130" width="70" height="290"/><rect x="120" y="90" width="55" height="330"/><rect x="190" y="150" width="80" height="270"/><rect x="290" y="200" width="60" height="220"/><rect x="360" y="170" width="90" height="250"/></g><path d="M0 340Q300 280 600 330V420H0Z" fill="#59606b"/><path d="M0 380H600" stroke="#8a919b" stroke-width="12"/></svg></div>
+  <div class="txt"><h1>Selamat Datang ke Portal Rasmi Lembaga Juruukur Bahan Malaysia</h1><p>Memperkasa industri ukur bahan melalui tadbir urus profesional, amalan terbaik, pembangunan mampan dan penyampaian perkhidmatan yang berkualiti demi kemajuan negara.</p><div class="btns"><a class="b1" href="#" data-modal="Mengenai LJBM">Mengenai LJBM</a><a class="b2" href="#perkhidmatan">Terokai Perkhidmatan LJBM</a></div></div></div>
+ <div class="slide"><div class="img" style="background:linear-gradient(180deg,#7fa4d8,#d8e4f5)"></div>
+  <div class="txt"><h1>Pendaftaran APC Dibuka</h1><p>Permohonan dan pembaharuan sijil amalan tahunan bagi Juruukur Bahan berdaftar kini boleh dibuat secara dalam talian.</p><div class="btns"><a class="b1" href="#perkhidmatan">Mohon Sekarang</a><a class="b2" href="#berita">Lihat Pengumuman</a></div></div></div>
+ <div class="slide"><div class="img" style="background:linear-gradient(180deg,#9bc79f,#e3f0e4)"></div>
+  <div class="txt"><h1>Tender dan Sebut Harga Terkini</h1><p>Semak iklan sebut harga dan tender yang dikeluarkan oleh LJBM untuk rujukan pihak yang berminat.</p><div class="btns"><a class="b1" href="#berita" data-tab="3">Lihat Tender</a></div></div></div>
+ <button class="arr l" data-h="-1" aria-label="Sebelumnya">‹</button><button class="arr r" data-h="1" aria-label="Seterusnya">›</button>
+</section>
+
+<section class="sec" id="perkhidmatan"><div class="wrap">
+ <div class="title"><h2>Perkhidmatan Kami</h2></div>
+ <div class="cwrap">
+  <button class="sv-arr" style="left:-27px;margin-top:-11px" data-s="-1" aria-label="Sebelumnya">‹</button>
+  <div class="track" id="trk">
+   <a class="card" href="#" data-modal="Pendaftaran APC"><svg class="ph" viewBox="0 0 400 300" preserveAspectRatio="none"><rect width="400" height="300" fill="#a7a095"/><circle cx="110" cy="120" r="55" fill="#eee"/><rect x="40" y="180" width="140" height="120" fill="#c7791b"/></svg><div class="cap c-b"><h3>Pendaftaran APC</h3><p>Permohonan dan pembaharuan sijil amalan tahunan bagi Juruukur Bahan berdaftar.</p></div></a>
+   <a class="card" href="#" data-modal="Pendaftaran Baharu"><svg class="ph" viewBox="0 0 400 300" preserveAspectRatio="none"><rect width="400" height="300" fill="#8a9aa5"/><rect x="60" y="130" width="50" height="170" fill="#2a2f35"/><rect x="40" y="90" width="90" height="50" fill="#13a5a5"/></svg><div class="cap c-g"><h3>Pendaftaran Baharu</h3><p>Permohonan pendaftaran bagi individu yang ingin menjadi Juruukur Bahan berdaftar di Malaysia.</p></div></a>
+   <a class="card" href="#" data-modal="Syarikat/Firma Perunding Ukur Bahan"><svg class="ph" viewBox="0 0 400 300" preserveAspectRatio="none"><rect width="400" height="300" fill="#b9c3cf"/><rect x="30" y="100" width="70" height="200" fill="#4b5560"/><rect x="190" y="30" width="30" height="270" fill="#8c96a2"/><rect x="230" y="30" width="30" height="270" fill="#8c96a2"/></svg><div class="cap c-y"><h3>Syarikat/Firma Perunding Ukur Bahan</h3><p>Senarai firma perunding ukur bahan berdaftar dengan LJBM.</p></div></a>
+   <a class="card" href="#" data-modal="Perkhidmatan Lain"><svg class="ph" viewBox="0 0 400 300" preserveAspectRatio="none"><rect width="400" height="300" fill="#2d4a36"/></svg><div class="cap c-b"><h3>Semakan Pendaftar</h3><p>Semak status pendaftaran Juruukur Bahan.</p></div></a>
+  </div>
+  <button class="sv-arr" style="right:-27px;margin-top:-11px" data-s="1" aria-label="Seterusnya">›</button>
+ </div>
+ <div class="dots" id="sd"></div>
+</div></section>
+
+<section class="sec news" id="berita"><div class="wrap">
+ <div class="nh"><h2>Ketahui Perkembangan Terbaru</h2><a class="dark" href="#" data-modal="Semua Pengumuman &amp; Penerbitan">Lihat Semua Pengumuman &amp; Penerbitan Terbaru</a></div>
+ <div class="ng">
+  <div class="tabs" role="tablist" id="tabs">
+   <button role="tab" aria-selected="true" data-c="p">Pengumuman</button><button role="tab" aria-selected="false" data-c="b">Buletin LJBM</button><button role="tab" aria-selected="false" data-c="l">Laporan Tahunan</button><button role="tab" aria-selected="false" data-c="t">Tender/Sebutharga</button>
+  </div>
+  <div class="list" id="list" role="tabpanel" aria-live="polite"></div>
+ </div>
+</div></section>
+
+<section class="notice"><div class="nv">
+ <div class="side l" aria-hidden="true"></div><div class="side r" aria-hidden="true">CADANGAN PINDAAN</div>
+ <button class="arr" style="left:max(16px,calc(50% - 415px + 0px))" data-n="-1" aria-label="Sebelumnya">‹</button>
+ <div style="position:relative;z-index:2;background:#fff;width:min(100%,830px)">
+  <div class="ns on"><svg width="64" height="64" style="border-radius:50%"><use href="#crest"/></svg><h3>NOTIS LARANGAN INDIVIDU TIDAK BERDAFTAR<br>SEBAGAI JURUUKUR BAHAN</h3><hr><div class="row">TEKAN <a class="pill" href="#" data-modal="Notis Larangan">BUTANG</a> INI UNTUK MAKLUMAT LANJUT</div><div class="soc"><a href="#" data-modal="www.bqsm.gov.my">&#127760; www.bqsm.gov.my</a><span>𝕏 &nbsp;f &nbsp;◎</span><span>Lembaga Juruukur Bahan Malaysia</span></div></div>
+  <div class="ns"><h3>PENDAFTARAN APC 2026<br>KINI DIBUKA</h3><hr><div class="row">TEKAN <a class="pill" href="#perkhidmatan">BUTANG</a> UNTUK PERMOHONAN</div></div>
+  <div class="ns"><h3>CADANGAN PINDAAN<br>AKTA JURUUKUR BAHAN</h3><hr><div class="row">TEKAN <a class="pill" href="#" data-modal="Cadangan Pindaan">BUTANG</a> UNTUK MAKLUM BALAS</div></div>
+ </div>
+ <button class="arr" style="right:max(16px,calc(50% - 415px))" data-n="1" aria-label="Seterusnya">›</button>
+</div><div class="dots" id="nd"></div></section>
+
+<section class="partners wrap">
+ <p>Kami bekerjasama dengan agensi berkaitan untuk menterjemahkan idea dan strategi LJBM kepada realiti.</p>
+ <div class="pg">
+  <a href="#" data-modal="MyGovernment" style="color:#a1171f">MyGov</a><a href="#" data-modal="MDEC" style="color:#c8102e">MDEC</a><a href="#" data-modal="RISM" style="color:#1f3a8a">RISM</a><a href="#" data-modal="JKR" style="color:#b88a00">JKR</a><a href="#" data-modal="Lembaga Arkitek Malaysia" style="color:#2aa9a0">LAM</a>
+  <a href="#" data-modal="Board of Engineers Malaysia" style="color:#333">BEM</a><a href="#" data-modal="CIDB" style="color:#18a0a0">CIDB</a><a href="#" data-modal="PAQS" style="color:#c8102e">PAQS</a><a href="#" data-modal="RICS" style="color:#4b2e83">RICS</a><a href="#" data-modal="MalaysiaBiz" style="color:#2866b5">MalaysiaBiz</a>
+ </div>
+</section>
+</main>
+
+<footer id="hubungi">
+ <div class="wrap"><div class="fg">
+  <div><div style="display:flex;gap:6px"><svg width="64" height="64"><use href="#crest"/></svg><svg width="64" height="64"><use href="#crest"/></svg></div>
+   <div class="ct"><span>⌂ Lembaga Juruukur Bahan Malaysia<br>Aras 17, Blok F, Ibu Pejabat JKR,<br>Jalan Sultan Salahuddin,<br>50582 Kuala Lumpur</span><a href="tel:+60326107809">✆ 603 – 2610 7809 / 603 – 2692 5680</a><a href="mailto:info@bqsm.gov.my">✉ info[at]bqsm.gov.my</a></div>
+   <div class="soc2"><a href="#" data-modal="TikTok" aria-label="TikTok">♪</a><a href="#" data-modal="YouTube" aria-label="YouTube">▶</a><a href="#" data-modal="X" aria-label="X">𝕏</a><a href="#" data-modal="Facebook" aria-label="Facebook">f</a><a href="#" data-modal="Instagram" aria-label="Instagram">◎</a></div></div>
+  <div><h4>Pautan Luar</h4><ul class="two"><li><a href="#">MyGovernment</a></li><li><a href="#">MDEC</a></li><li><a href="#">RISM</a></li><li><a href="#">JKR</a></li><li><a href="#">Lembaga Arkitek Malaysia</a></li><li><a href="#">Badan Jurutera Malaysia</a></li><li><a href="#">CIDB</a></li><li><a href="#">PAQS</a></li><li><a href="#">RICS</a></li><li><a href="#">MalaysiaBiz</a></li></ul></div>
+  <div><h4>Pautan Pantas</h4><ul><li><a href="#">Akta Juruukur Bahan</a></li><li><a href="#">Akreditasi Yang Diiktiraf</a></li><li><a href="#">Peta Laman</a></li><li><a href="#">Skala FI</a></li><li><a href="#">Pekeliling LJBM</a></li><li><a href="#">Buletin QS-Link</a></li><li><a href="#">Assessment of Professional Competence (APC)</a></li></ul></div>
+  <div><h4>Statistik Pelawat</h4><div class="st"><div><span>Hari Ini</span><span id="v1">1453</span></div><div><span>Semalam</span><span>523</span></div><div><span>Minggu Ini</span><span>29769</span></div><div><span>Bulan Ini</span><span>8643689</span></div><div><span>Keseluruhan</span><span>78868969</span></div><p>Kemaskini Terakhir : 28 Julai 2026</p></div></div>
+ </div></div>
+ <div class="bar"><div class="wrap"><span>Paparan terbaik menggunakan Mozilla Firefox versi 50 dan ke atas dengan resolusi skrin minimum 1366 × 768 piksel.<br>Hak Cipta Terpelihara © 2026 Lembaga Juruukur Bahan Malaysia.</span><nav><a href="#" data-modal="Penafian">Penafian</a><a href="#" data-modal="Dasar Privasi">Dasar Privasi</a><a href="#" data-modal="Dasar Keselamatan">Dasar Keselamatan</a><a href="#" data-modal="Data Terbuka">Data Terbuka</a></nav></div></div>
+</footer>
+
+<div id="md" role="dialog" aria-modal="true" aria-labelledby="mt"><div><h3 id="mt"></h3><p>Halaman ini ialah prototaip. Kandungan penuh akan dipaut ke laman rasmi apabila dilancarkan.</p><button class="dark" id="mc">Tutup</button></div></div>
+<div id="toast" role="status"></div>
+
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),2200)};
+
+/* modal for placeholder destinations */
+const md=$('#md');
+document.addEventListener('click',e=>{
+ const a=e.target.closest('[data-modal]');
+ if(a){e.preventDefault();$('#mt').textContent=a.dataset.modal;md.classList.add('on');$('#mc').focus()}
+ else if(e.target.closest('a[href="#"]'))e.preventDefault();
+ if(e.target===md||e.target.id==='mc')md.classList.remove('on');
+ if(!e.target.closest('.nav li'))$$('.nav li.open').forEach(l=>{l.classList.remove('open');$('button',l).setAttribute('aria-expanded','false')});
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){md.classList.remove('on');$$('.nav li.open').forEach(l=>l.classList.remove('open'))}});
+
+/* nav dropdowns + mobile menu */
+$$('.nav>li').forEach(li=>{const b=$('button',li);if(!b||!$('.sub',li))return;
+ b.addEventListener('click',e=>{e.stopPropagation();const o=li.classList.contains('open');$$('.nav li.open').forEach(x=>x.classList.remove('open'));li.classList.toggle('open',!o);b.setAttribute('aria-expanded',!o)})});
+$('#ham').onclick=function(){const o=$('#hr').classList.toggle('on');this.setAttribute('aria-expanded',o)};
+$$('.nav a[href^="#"]').forEach(a=>a.addEventListener('click',()=>$('#hr').classList.remove('on')));
+
+/* search */
+$('#sb').onclick=()=>{$('#sbar').classList.toggle('on');$('#q').focus()};
+$('#sbar').onsubmit=e=>{e.preventDefault();q=$('#q').value.trim().toLowerCase();render();$('#berita').scrollIntoView({behavior:'smooth'});toast(q?'Hasil carian: "'+q+'"':'Carian dikosongkan')};
+
+/* language + accessibility */
+const L={ms:{portal:'Portal Rasmi',lang:'Bahasa Malaysia ⌄'},en:{portal:'Official Portal',lang:'English ⌄'}};
+$('#lang').onclick=function(){const en=document.documentElement.lang==='ms';document.documentElement.lang=en?'en':'ms';const t=L[en?'en':'ms'];$('[data-t=portal]').textContent=t.portal;this.textContent=t.lang;this.setAttribute('aria-pressed',en);toast(en?'Language: English (prototype, UI labels only)':'Bahasa: Bahasa Malaysia')};
+$('#acc').onclick=function(){const b=document.body.classList.toggle('big');this.setAttribute('aria-pressed',b);toast(b?'Teks dibesarkan':'Saiz teks asal')};
+
+/* hero slider */
+let h=0;const hs=$$('.slide');
+function hero(d){hs[h].classList.remove('on');h=(h+d+hs.length)%hs.length;hs[h].classList.add('on')}
+$$('[data-h]').forEach(b=>b.onclick=()=>hero(+b.dataset.h));
+let ht=setInterval(()=>hero(1),7000);
+$('.hero').addEventListener('mouseenter',()=>clearInterval(ht));
+
+/* services carousel */
+const trk=$('#trk'),cards=$$('.card',trk);
+const per=()=>innerWidth>1000?3:innerWidth>600?2:1;
+const pages=()=>Math.max(1,cards.length-per()+1);
+let si=0;
+function svc(i){si=Math.min(Math.max(i,0),pages()-1);trk.scrollTo({left:cards[si].offsetLeft-cards[0].offsetLeft,behavior:'smooth'});dots('#sd',pages(),si,svc)}
+function dots(sel,n,a,fn){const d=$(sel);d.innerHTML='';for(let i=0;i<n;i++){const b=document.createElement('button');b.className=i===a?'on':'';b.setAttribute('aria-label','Slaid '+(i+1));b.onclick=()=>fn(i);d.append(b)}}
+$$('[data-s]').forEach(b=>b.onclick=()=>svc(si+ +b.dataset.s));
+addEventListener('resize',()=>svc(si));svc(0);
+
+/* news */
+const thumb=(t,c)=>`<svg viewBox="0 0 300 216" role="img" aria-label="${t}"><rect width="300" height="216" fill="${c}"/><rect x="20" y="40" width="260" height="14" fill="#f3c26b"/><text x="150" y="51" font-size="9" font-weight="700" text-anchor="middle" fill="#333">${t}</text><g fill="#bbb"><rect x="30" y="70" width="240" height="6"/><rect x="50" y="84" width="200" height="6"/><rect x="30" y="130" width="240" height="40"/></g></svg>`;
+const D=[
+ {c:'p',d:'28th July 2026',t:'Iklan Sebut Harga bagi Sebut Harga LJBM/DSH06/2026',x:'Makluman mengenai iklan sebut harga terkini yang dikeluarkan oleh Lembaga Juruukur Bahan Malaysia untuk rujukan pihak yang berminat.',i:'KENYATAAN TAWARAN SEBUT HARGA',k:'#fff'},
+ {c:'p',d:'18th June 2026',t:'Hebahan: Hari Profesion Teknikal Negara 2026',x:'Hebahan berkaitan sambutan Hari Profesion Teknikal Negara 2026 bagi meraikan sumbangan profesional dalam bidang teknikal kepada pembangunan...',i:'HARI PROFESION TEKNIKAL NEGARA 2026',k:'#2d73c9'},
+ {c:'p',d:'4th May 2026',t:'Kenyataan Tawaran Sebut Harga LJBM/DSH05/2026',x:'Kenyataan rasmi tawaran sebut harga oleh Lembaga Juruukur Bahan Malaysia yang mengandungi maklumat berkaitan untuk perhatian dan tindakan pihak yang...',i:'KENYATAAN TAWARAN SEBUT HARGA',k:'#fff'},
+ {c:'b',d:'12th March 2026',t:'Buletin QS-Link Edisi 1/2026',x:'Buletin triwulan LJBM mengenai perkembangan profesion, aktiviti lembaga dan notis terkini kepada juruukur bahan berdaftar.',i:'BULETIN QS-LINK',k:'#e9f0fb'},
+ {c:'l',d:'30th April 2026',t:'Laporan Tahunan LJBM 2025',x:'Laporan prestasi dan penyata kewangan tahunan Lembaga Juruukur Bahan Malaysia bagi tahun berakhir 31 Disember 2025.',i:'LAPORAN TAHUNAN 2025',k:'#f4f1e6'},
+ {c:'t',d:'2nd February 2026',t:'Tender Perkhidmatan Penyelenggaraan Sistem ICT',x:'Jemputan tender bagi perkhidmatan penyelenggaraan sistem ICT Lembaga Juruukur Bahan Malaysia untuk tempoh dua tahun.',i:'JEMPUTAN TENDER',k:'#fff'}
+];
+let cat='p',q='';
+function render(){const l=$('#list');
+ const r=D.filter(n=>(q?true:n.c===cat)&&(!q||(n.t+n.x).toLowerCase().includes(q)));
+ l.innerHTML=r.map(n=>`<a class="n" href="#" data-modal="${n.t}"><div class="th">${thumb(n.i,n.k)}</div><time><svg width="14" height="14"><use href="#cal"/></svg>${n.d}</time><h3>${n.t}</h3><p>${n.x}</p></a>`).join('')||'<p id="empty" style="display:block">Tiada hasil dijumpai.</p>'}
+function tab(c){cat=c;q='';$('#q').value='';$$('#tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.c===c));render()}
+$$('#tabs button').forEach(b=>b.onclick=()=>tab(b.dataset.c));
+$$('[data-tab]').forEach(a=>a.addEventListener('click',()=>tab('t')));
+render();
+
+/* notice slider */
+const ns=$$('.ns');let ni=0;
+function note(i){ni=(i+ns.length)%ns.length;ns.forEach((s,k)=>s.classList.toggle('on',k===ni));dots('#nd',ns.length,ni,note)}
+$$('[data-n]').forEach(b=>b.onclick=()=>note(ni+ +b.dataset.n));note(0);
+
+/* visitor counter */
+let v=1453;setInterval(()=>{$('#v1').textContent=++v},15000);
+})();
+</script>
+</body>
+</html>

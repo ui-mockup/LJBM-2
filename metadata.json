@@ -1,0 +1,6 @@
+{
+  "name": "Portal Rasmi Lembaga Juruukur Bahan Malaysia",
+  "description": "Portal rasmi Lembaga Juruukur Bahan Malaysia (Board of Quantity Surveyors Malaysia - BQSM) bagi perkhidmatan pendaftaran, APC, buletin, pekeliling, dan direktori profesional.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

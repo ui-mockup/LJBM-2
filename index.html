@@ -1,0 +1,3046 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Rasmi Lembaga Juruukur Bahan Malaysia</title>
+<meta name="description" content="Portal Rasmi Lembaga Juruukur Bahan Malaysia (Board of Quantity Surveyors Malaysia - BQSM). Agensi di bawah Kementerian Kerja Raya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CSS STYLES - PORTAL RASMI LEMBAGA JURUUKUR BAHAN MALAYSIA
+   ========================================================================== */
+:root {
+  --navy: #002278;
+  --navy-dark: #001752;
+  --blue: #1f4fa3;
+  --blue-hover: #153c80;
+  --green: #3b8c3f;
+  --yellow: #f5b800;
+  --yellow-hover: #dc9c00;
+  --ink: #111111;
+  --ink-secondary: #333333;
+  --ink-muted: #666666;
+  --soft: #e8edf6;
+  --foot: #d3ddf0;
+  --border: #d0d7e2;
+  --border-light: #e4e9f0;
+  --sans: "DM Sans", Arial, sans-serif;
+  --serif: "Noto Serif", Georgia, serif;
+  --w: 1200px;
+  --header-w: 1440px;
+  --pad: clamp(16px, 4vw, 50px);
+  --trans: 0.2s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: #ffffff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.big {
+  font-size: 118%;
+}
+
+body.high-contrast {
+  --navy: #000000;
+  --blue: #001a5e;
+  --soft: #f2f2f2;
+  --foot: #dcdcdc;
+  --ink: #000000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--w);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  background: var(--yellow);
+  color: #000;
+  padding: 8px 16px;
+  font-weight: 700;
+  z-index: 999;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ==========================================================================
+   HEADER & TOP NAVIGATION (WIDER WIDTH & SLEEK PADDING)
+   ========================================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 6px clamp(14px, 2.5vw, 36px);
+  max-width: var(--header-w);
+  margin-inline: auto;
+  width: 100%;
+  position: relative;
+}
+
+/* Brand Lockup with Real Uploaded Logo (Optimized size for breathing room) */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  height: clamp(28px, 2.6vw, 38px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hr {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+/* Utility Links */
+.util {
+  display: flex;
+  gap: 16px;
+  font-size: 11.5px;
+  align-items: center;
+  color: var(--ink-secondary);
+}
+
+.util a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.util a:hover, .nav a:hover, .nav button:hover {
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+.lucide-icon {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.sbtn {
+  padding: 4px 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-secondary);
+}
+.sbtn:hover {
+  color: var(--blue);
+}
+
+/* Main Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 600;
+  border-top: 1px solid #d4d4d4;
+  padding-top: 6px;
+  width: 100%;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.nav > li {
+  position: relative;
+  list-style: none;
+}
+
+.nav a, .nav button {
+  padding: 6px 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 600;
+  transition: color var(--trans);
+}
+
+/* Chevron: big enough, almost same size as menu text with smooth rotate */
+.menu-chevron {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.nav li.open .menu-chevron,
+.nav li:hover .menu-chevron {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   NORMAL DROPDOWN MENU
+   ========================================================================== */
+.nav .sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border-top: 2px solid var(--blue);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0, 20, 60, 0.12);
+  min-width: 220px;
+  z-index: 300;
+  padding: 6px 0;
+  border-radius: 0 0 4px 4px;
+}
+
+@media (min-width: 841px) {
+  .nav > li:hover > .sub,
+  .nav > li:focus-within > .sub {
+    display: block;
+    animation: subFade 0.18s ease-out;
+  }
+}
+
+.nav li.open > .sub {
+  display: block;
+}
+
+@keyframes subFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sub a {
+  display: block;
+  padding: 9px 16px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: normal;
+  line-height: 1.4;
+  border-bottom: 1px solid #f0f2f5;
+  transition: background var(--trans), color var(--trans), padding-left var(--trans);
+}
+
+.sub a:last-child {
+  border-bottom: none;
+}
+
+.sub a:hover {
+  background: var(--soft);
+  color: var(--blue);
+  padding-left: 19px;
+  text-decoration: none;
+}
+
+/* Accessibility button with uploaded wheelchair-icon.png (24px x 24px) */
+.wheelchair-icon-img {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+#acc {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background var(--trans);
+}
+
+#acc:hover {
+  background: rgba(2, 39, 94, 0.08);
+}
+
+#acc:hover .wheelchair-icon-img {
+  transform: scale(1.12);
+}
+
+#acc:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   W3C ACCESSIBILITY TOOLS POPOUT (MATCHING REFERENCE ATTACHMENT)
+   ========================================================================== */
+#a11y-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 80px clamp(14px, 3.5vw, 48px) 24px;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: a11yFade 0.2s ease-out;
+}
+
+#a11y-overlay.open {
+  display: flex;
+}
+
+@keyframes a11yFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.a11y-panel {
+  background: #ffffff;
+  width: 100%;
+  max-width: 410px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  padding: 22px 22px 18px;
+  color: #1e293b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  position: relative;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  animation: a11ySlide 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes a11ySlide {
+  from { opacity: 0; transform: scale(0.95) translateY(-8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.a11y-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.a11y-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.a11y-hdr-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.a11y-btn-reset {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: #334155;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: transform 0.25s ease, color 0.15s ease;
+}
+
+.a11y-btn-reset:hover {
+  color: #0284c7;
+  transform: rotate(-90deg);
+}
+
+.a11y-btn-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.a11y-btn-close:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* 2-Column Grid of 8 Quick Action Cards */
+.a11y-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.a11y-card {
+  background: #f8fafc;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  padding: 13px 12px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s;
+  color: #1e293b;
+  width: 100%;
+}
+
+.a11y-card:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.a11y-card.active {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.a11y-card-icon {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #334155;
+}
+
+.a11y-card.active .a11y-card-icon {
+  color: #2563eb;
+}
+
+.a11y-card-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* Sliders List */
+.a11y-sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.a11y-row {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.a11y-row-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #334155;
+  width: 115px;
+  flex-shrink: 0;
+}
+
+.a11y-bar-wrap {
+  flex: 1;
+  min-width: 50px;
+}
+
+.a11y-bar {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.a11y-bar-fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 2px;
+  transition: width 0.15s ease;
+}
+
+.a11y-row-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  width: 44px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.a11y-step-group {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  border-left: 1px solid #e2e8f0;
+  padding-left: 8px;
+}
+
+.a11y-btn-step {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.a11y-btn-step:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+/* Footer of Popout */
+.a11y-ftr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.a11y-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+}
+
+.a11y-circles-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.a11y-ftr-link {
+  color: #475569;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.a11y-ftr-link:hover {
+  color: #2563eb;
+}
+
+/* Functional Page Filters when active */
+html.a11y-invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+html.a11y-invert img,
+html.a11y-invert video,
+html.a11y-invert .hero .img,
+html.a11y-invert .card .bg,
+html.a11y-invert #a11y-overlay {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.a11y-mono {
+  filter: grayscale(100%);
+}
+html.a11y-mono #a11y-overlay {
+  filter: none;
+}
+
+html.a11y-dark-contrast body {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+html.a11y-dark-contrast header,
+html.a11y-dark-contrast .bar,
+html.a11y-dark-contrast footer,
+html.a11y-dark-contrast .sec,
+html.a11y-dark-contrast #perkhidmatan {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+html.a11y-dark-contrast a {
+  color: #38bdf8 !important;
+}
+html.a11y-dark-contrast #a11y-overlay,
+html.a11y-dark-contrast #a11y-overlay * {
+  color: revert !important;
+  background-color: revert !important;
+}
+
+html.a11y-light-contrast body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+html.a11y-light-contrast * {
+  border-color: #000000 !important;
+}
+
+html.a11y-low-sat {
+  filter: saturate(30%);
+}
+html.a11y-high-sat {
+  filter: saturate(200%);
+}
+
+html.a11y-highlight-links a:not(.a11y-panel a) {
+  background-color: #fef08a !important;
+  color: #0f172a !important;
+  text-decoration: underline 2px !important;
+  outline: 2px solid #ca8a04 !important;
+}
+
+html.a11y-highlight-headings h1:not(.a11y-panel *),
+html.a11y-highlight-headings h2:not(.a11y-panel *),
+html.a11y-highlight-headings h3:not(.a11y-panel *),
+html.a11y-highlight-headings h4:not(.a11y-panel *),
+html.a11y-highlight-headings h5:not(.a11y-panel *) {
+  outline: 2.5px dashed #2563eb !important;
+  outline-offset: 3px !important;
+  background-color: rgba(37, 99, 235, 0.08) !important;
+}
+
+.nav .sep {
+  width: 1px;
+  height: 18px;
+  background: #ccc;
+  margin-inline: 6px;
+}
+
+.ham {
+  display: none;
+  margin-left: auto;
+  width: 42px;
+  height: 42px;
+  font-size: 24px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Slide-down Search Bar */
+#sbar {
+  display: none;
+  background: var(--soft);
+  padding: 12px clamp(12px, 2.5vw, 36px);
+  border-top: 1px solid #ccc;
+  max-width: var(--header-w);
+  margin-inline: auto;
+}
+
+#sbar.on {
+  display: flex;
+  gap: 10px;
+}
+
+#sbar input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #888;
+  font: inherit;
+  font-size: 14px;
+  background: #fff;
+}
+
+#sbar button {
+  background: var(--navy);
+  color: #fff;
+  padding: 0 22px;
+  font-weight: 600;
+  font-size: 14px;
+}
+#sbar button:hover {
+  background: var(--blue);
+}
+
+/* ==========================================================================
+   HERO BANNER (50% / 50% SPLIT AS IN MOCKUP)
+   ========================================================================== */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 460px;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr 1fr;
+  min-height: 460px;
+}
+
+.slide.on {
+  display: grid;
+}
+
+.hero .img {
+  position: relative;
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero .txt {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 60px clamp(24px, 5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.txt h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.22;
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+}
+
+.txt p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 28px;
+  color: #edf2f9;
+}
+
+.btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.b1, .b2 {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #ffffff;
+  transition: all var(--trans);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.b1 {
+  background: #ffffff;
+  color: var(--ink);
+}
+.b1:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+
+.b2 {
+  color: #ffffff;
+  background: transparent;
+}
+.b2:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Slider Edge Arrows */
+.arr {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  background: #ffffff;
+  border: 1px solid #888888;
+  font-size: 16px;
+  line-height: 1;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition: all var(--trans);
+}
+.arr:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+.hero .arr.l { left: 0; }
+.hero .arr.r { right: 0; }
+
+/* ==========================================================================
+   PERKHIDMATAN KAMI (SERVICES CAROUSEL - FLOWS FROM CONTAINER OUT TO RIGHT EDGE)
+   ========================================================================== */
+.sec {
+  padding: 70px 0;
+}
+
+.sec-services {
+  overflow: hidden;
+  position: relative;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 36px;
+}
+
+.title-bar h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.title-bar::after {
+  content: "";
+  flex: 1;
+  height: 3px;
+  background: var(--blue);
+}
+
+.cwrap-bleed {
+  position: relative;
+  width: 100%;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Aligns with .wrap container on the left, strictly 0 margin & padding on the right */
+  padding-left: max(var(--pad), calc((100% - var(--w)) / 2 + var(--pad)));
+  padding-right: 0;
+  margin-right: 0;
+  padding-bottom: 8px;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 clamp(300px, 26vw, 360px);
+  height: 310px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  display: block;
+  flex-shrink: 0;
+  transition: transform var(--trans), box-shadow var(--trans);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Corner Box Overlay positioned bottom right (50% height) */
+.card .cap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 78%;
+  height: 50%;
+  padding: 18px 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+  transition: filter var(--trans);
+}
+
+.card .cap h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.card .cap p {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.card:hover .cap {
+  filter: brightness(1.12);
+}
+
+.c-b { background: var(--blue); }
+.c-g { background: var(--green); }
+.c-y { background: var(--yellow); color: var(--ink) !important; }
+
+.sv-arr {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #aaa;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  font-size: 20px;
+  color: var(--ink);
+  transition: all var(--trans);
+}
+.sv-arr:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+.sv-arr.l {
+  left: max(10px, calc((100% - var(--w)) / 2 + var(--pad) - 18px));
+}
+.sv-arr.r {
+  right: 18px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 26px;
+}
+
+.dots button {
+  width: 10px;
+  height: 5px;
+  background: #aaa;
+  transition: all var(--trans);
+}
+
+.dots button.on {
+  width: 42px;
+  background: #777;
+}
+
+/* ==========================================================================
+   BERITA & PENGUMUMAN (TABS & 3-CARD GRID)
+   ========================================================================== */
+.news {
+  background: var(--soft);
+}
+
+.nh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+.nh h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(26px, 3.2vw, 36px);
+  color: var(--ink);
+}
+
+.dark-btn {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0;
+  transition: background var(--trans);
+}
+.dark-btn:hover {
+  background: var(--navy);
+}
+
+.ng {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Center-aligned tabs text buttons */
+.tabs button {
+  padding: 13px 16px;
+  border: 1px solid #333333;
+  font-size: 15px;
+  font-weight: 500;
+  background: transparent;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: all var(--trans);
+}
+
+.tabs button:hover {
+  background: #ffffff;
+}
+
+.tabs button[aria-selected="true"] {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-content: start;
+}
+
+.n {
+  display: flex;
+  flex-direction: column;
+}
+
+.n .th {
+  aspect-ratio: 1 / 0.72;
+  background: #ffffff;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+.n .th img, .n .th svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform var(--trans);
+}
+.n:hover .th img, .n:hover .th svg {
+  transform: scale(1.03);
+}
+
+.n time {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 12.5px;
+  color: #555;
+  margin: 10px 0 6px;
+}
+
+.n h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.n:hover h3 {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.n p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.5;
+}
+
+#empty {
+  display: none;
+  grid-column: 1 / -1;
+  padding: 40px;
+  text-align: center;
+  background: #fff;
+  color: #666;
+}
+
+/* ==========================================================================
+   OFFICIAL REGULATORY NOTICE (SEAMLESS INFINITE LOOP SLIDER WITH SIDE PEEKS)
+   ========================================================================== */
+.notice {
+  padding: 60px 0 30px;
+  overflow: hidden;
+  background: #ffffff;
+  position: relative;
+}
+
+.notice-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0 20px;
+}
+
+.notice-track {
+  display: flex;
+  align-items: center;
+  transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1);
+  will-change: transform;
+}
+
+.notice-slide {
+  flex: 0 0 min(830px, 80vw);
+  margin-inline: 14px;
+  min-height: 380px;
+  background: #ffffff;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 34px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  opacity: 0.55;
+  transform: scale(0.94);
+  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.notice-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  cursor: default;
+}
+
+/* Poster / Image Slide Types */
+.notice-slide.slide-image {
+  padding: 0;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.notice-slide.slide-image .slide-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,34,120,0.2) 0%, rgba(0,15,50,0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 36px 30px;
+  color: #fff;
+  text-align: left;
+}
+
+.notice-slide.slide-poster {
+  background: linear-gradient(135deg, #1e4bb8 0%, #0d2a70 100%);
+  color: #ffffff;
+  border: 0;
+  padding: 40px 32px;
+}
+
+.notice-slide .notice-crest {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 4px;
+}
+
+.notice-slide h3 {
+  font-family: Arial, sans-serif;
+  font-size: clamp(20px, 3vw, 34px);
+  line-height: 1.25;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.01em;
+}
+
+.notice-slide hr {
+  width: 60%;
+  border: 0;
+  border-top: 3px solid #111;
+  margin-block: 4px;
+}
+
+.notice-slide .row {
+  font-weight: 700;
+  font-size: 19px;
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.notice-slide .pill {
+  display: inline-block;
+  background: var(--blue);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 3px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background var(--trans);
+}
+.notice-slide .pill:hover {
+  background: var(--navy);
+}
+
+.notice-slide .soc {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.notice-slide .soc a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.notice-slide .soc a:hover {
+  text-decoration: underline;
+}
+
+/* Notice Slider Navigation Arrows */
+.n-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #aaa;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-size: 20px;
+  line-height: 1;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition: all var(--trans);
+}
+.n-nav-btn:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+.n-nav-btn.l { left: clamp(10px, 4vw, 36px); }
+.n-nav-btn.r { right: clamp(10px, 4vw, 36px); }
+
+/* ==========================================================================
+   PARTNERS & AGENCIES GRID (EXACT LOGOS FROM MOCKUP)
+   ========================================================================== */
+.partners {
+  text-align: center;
+  padding: 50px 0 60px;
+  background: #ffffff;
+}
+
+.partners p {
+  font-size: 13.5px;
+  color: #2b4b88;
+  margin-bottom: 34px;
+}
+
+.pg {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px 16px;
+  max-width: 900px;
+  margin-inline: auto;
+  align-items: center;
+}
+
+.partner-link {
+  height: 80px;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease-out;
+  padding: 6px;
+}
+.partner-link:hover {
+  transform: scale(1.08);
+}
+
+.partner-logo-img, .partner-logo-svg {
+  max-height: 56px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  background: var(--foot);
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.fg {
+  display: grid;
+  grid-template-columns: 1.25fr 1.35fr 0.95fr 0.85fr;
+  gap: 28px;
+  padding: 40px 0 46px;
+}
+
+.fg h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.fg ul {
+  list-style: none;
+  display: grid;
+  gap: 11px;
+}
+
+.fg a:hover {
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+/* Two-column layout for Pautan Luar */
+.fg ul.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 10px;
+}
+.fg ul.two-col li {
+  margin: 0;
+}
+.fg ul.two-col li a {
+  display: inline-block;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+.ct {
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  margin-top: 16px;
+  line-height: 1.45;
+}
+
+.ct-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.soc2 {
+  display: flex;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.soc2 a {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  border: 1.5px solid var(--ink);
+  border-radius: 5px;
+  font-weight: 700;
+  transition: all var(--trans);
+}
+.soc2 a:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.st {
+  font-size: 14px;
+}
+
+.st div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-block: 2px;
+}
+
+.st p {
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+/* Bottom Bar */
+.bar {
+  background: #111111;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 14px 0;
+}
+
+.bar .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bar nav {
+  display: flex;
+  gap: 18px;
+}
+
+.bar a:hover {
+  text-decoration: underline;
+}
+
+/* Modal for Simulated Interactions */
+#md {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 500;
+  place-items: center;
+  padding: 16px;
+  backdrop-filter: blur(3px);
+}
+
+#md.on {
+  display: grid;
+}
+
+#md-box {
+  background: #ffffff;
+  max-width: 580px;
+  width: 100%;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border-radius: 4px;
+}
+
+#md h3 {
+  font-family: var(--serif);
+  margin-bottom: 12px;
+  font-size: 22px;
+  color: var(--navy);
+}
+
+#md p {
+  margin-bottom: 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 1000;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#toast.on {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .card { flex: 0 0 clamp(280px, 42vw, 340px); }
+  .ng { grid-template-columns: 1fr; }
+  .tabs { flex-direction: row; flex-wrap: wrap; }
+  .tabs button { flex: 1 1 140px; }
+  .list { grid-template-columns: repeat(2, 1fr); }
+  .fg { grid-template-columns: 1fr 1fr; }
+  .nav { font-size: 11px; }
+  .nav a, .nav button { padding: 6px 8px; }
+  .mega-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 840px) {
+  .ham { display: block; }
+  .hr {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 2px solid var(--navy);
+    padding: 14px 20px;
+    align-items: stretch;
+    max-height: 82vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  .hr.on { display: flex; }
+  .util { flex-wrap: wrap; order: 2; gap: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; }
+  .nav { flex-direction: column; align-items: stretch; font-size: 15px; border: 0; padding-top: 0; }
+  .nav .sep { display: none; }
+  .nav a, .nav button { padding: 10px; width: 100%; justify-content: space-between; font-size: 14px; }
+  
+  /* Mobile Drawer Accordion for Dropdown Sub-menus */
+  .nav .sub {
+    position: static;
+    border: 0;
+    box-shadow: none;
+    padding: 6px 0 8px 14px;
+    background: var(--soft);
+    border-left: 3px solid var(--blue);
+    min-width: auto;
+  }
+  .sub a {
+    padding: 8px 12px;
+    font-size: 13.5px;
+  }
+
+  .slide.on { grid-template-columns: 1fr; }
+  .hero .img { min-height: 240px; }
+  .hero .txt { padding: 36px 20px; }
+  .notice-slide { flex: 0 0 90vw; margin-inline: 8px; }
+}
+
+@media (max-width: 600px) {
+  .sec { padding: 48px 0; }
+  .card { flex: 0 0 clamp(260px, 78vw, 320px); }
+  .list { grid-template-columns: 1fr; }
+  .fg { grid-template-columns: 1fr; }
+  .pg { grid-template-columns: repeat(2, 1fr); }
+  .title-bar { gap: 14px; }
+  .notice-slide .row { font-size: 15px; }
+
+  /* Mobile W3C Accessibility Overlay */
+  #a11y-overlay {
+    padding: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+  .a11y-panel {
+    max-height: 92vh;
+    padding: 18px 16px 14px;
+    border-radius: 20px;
+  }
+  .a11y-grid {
+    gap: 8px;
+  }
+  .a11y-card {
+    padding: 10px 8px;
+    gap: 8px;
+  }
+  .a11y-card-text {
+    font-size: 12px;
+  }
+  .a11y-row-label {
+    width: 95px;
+    font-size: 12.5px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Skip Link for Accessibility -->
+<a href="#main-content" class="skip-link">Langkau ke kandungan utama</a>
+
+<!-- SVG Symbol Definitions (Official Emblems & Partner Logos) -->
+<svg width="0" height="0" style="position:absolute;display:none;" aria-hidden="true">
+  <defs>
+    <!-- Malaysian Coat of Arms (Jata Negara) -->
+    <symbol id="logo-jata" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="23" fill="#ffffff" stroke="#c09000" stroke-width="1.5"/>
+      <path d="M24 6 C28 6, 31 9, 31 13 C31 17, 28 20, 24 20 C20 20, 17 17, 17 13 C17 9, 20 6, 24 6 Z" fill="#f5b800"/>
+      <path d="M24 7.5 A5 5 0 0 1 24 18 A4 4 0 0 0 24 7.5 Z" fill="#ffffff"/>
+      <polygon points="24,9 25,12 28,12 25.5,14 26.5,17 24,15 21.5,17 22.5,14 20,12 23,12" fill="#f5b800"/>
+      <path d="M15 19 H33 V29 Q33 38 24 41 Q15 38 15 29 Z" fill="#d91e18" stroke="#f5b800" stroke-width="1.5"/>
+      <path d="M24 19 V41" stroke="#f5b800" stroke-width="1"/>
+      <path d="M15 27 H33" stroke="#f5b800" stroke-width="1"/>
+      <path d="M15 21 H33" stroke="#ffffff" stroke-width="2"/>
+      <path d="M11 20 Q14 26 15 32" stroke="#d97706" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M37 20 Q34 26 33 32" stroke="#d97706" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M14 41 Q24 44 34 41" stroke="#f5b800" stroke-width="2" fill="none"/>
+    </symbol>
+
+    <!-- Official Lembaga Juruukur Bahan Malaysia (LJBM) Crest -->
+    <symbol id="logo-ljbm" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="23" fill="#f5b800" stroke="#000000" stroke-width="1.5"/>
+      <circle cx="24" cy="24" r="19" fill="#f5b800" stroke="#000000" stroke-width="1.2"/>
+      <path id="text-path-top" d="M 9,24 A 15,15 0 0,1 39,24" fill="none"/>
+      <path id="text-path-bottom" d="M 39,24 A 15,15 0 0,1 9,24" fill="none"/>
+      <text font-size="4.2" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.5" fill="#000000">
+        <textPath href="#text-path-top" startOffset="50%" text-anchor="middle">JURUUKUR</textPath>
+      </text>
+      <text font-size="4" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.4" fill="#000000">
+        <textPath href="#text-path-bottom" startOffset="50%" text-anchor="middle">BAHAN MALAYSIA</textPath>
+      </text>
+      <circle cx="24" cy="24" r="10" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+      <polygon points="24,16 31,30 17,30" fill="none" stroke="#000000" stroke-width="2"/>
+      <circle cx="24" cy="23" r="2" fill="#000000"/>
+      <line x1="24" y1="16" x2="24" y2="30" stroke="#000000" stroke-width="1"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- HEADER WITH EXPANDED WIDTH, REAL LOGO, BIGGER CHEVRONS & MEGA MENUS -->
+<header>
+  <div class="hd">
+    <!-- Brand Lockup with Real Uploaded logo-jblm.png -->
+    <a class="brand" href="#top" aria-label="Laman utama Lembaga Juruukur Bahan Malaysia">
+      <img src="logo-jblm.png" alt="Portal Rasmi Lembaga Juruukur Bahan Malaysia - Menteri Kerja Raya" class="brand-logo-img">
+    </a>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button class="ham" id="ham" aria-label="Menu Navigasi" aria-expanded="false">☰</button>
+
+    <!-- Navigation Column -->
+    <div class="hr" id="hr">
+      <!-- Utility Links (Top Row with Lucide Icons) -->
+      <div class="util">
+        <a href="#faq" data-modal="Soalan Lazim">
+          <!-- Lucide HelpCircle Icon -->
+          <svg class="lucide-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span data-t="u_faq">Soalan Lazim</span>
+        </a>
+        <a href="#aduan" data-modal="Aduan dan Maklum Balas">
+          <!-- Lucide ClipboardList / MessageSquare Icon -->
+          <svg class="lucide-icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+          <span data-t="u_feedback">Aduan dan Maklum Balas</span>
+        </a>
+        <a href="#peta" data-modal="Peta Laman">
+          <!-- Lucide Network / Sitemap Icon -->
+          <svg class="lucide-icon" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="4" rx="1"/><rect x="2" y="18" width="6" height="4" rx="1"/><rect x="16" y="18" width="6" height="4" rx="1"/><path d="M5 18v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><line x1="12" y1="6" x2="12" y2="12"/></svg>
+          <span data-t="u_sitemap">Peta Laman</span>
+        </a>
+        <a href="#hubungi">
+          <!-- Lucide Phone Icon -->
+          <svg class="lucide-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-t="u_contact">Hubungi Kami</span>
+        </a>
+        <!-- Lucide Search Icon -->
+        <button class="sbtn" id="sb" aria-label="Buka Carian">
+          <svg class="lucide-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+
+      <!-- Main Navigation Menu (Bottom Row with Prominent Chevrons & Full Mega Menus) -->
+      <ul class="nav" id="nav">
+        <li><a href="#top" data-t="m_home">Utama</a></li>
+
+        <!-- 1. Info Korporat -->
+        <li>
+          <button aria-expanded="false">
+            <span data-t="m_corp">Info Korporat</span>
+            <svg class="menu-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="sub">
+            <a href="#" data-modal="Latar Belakang Korporat">Latar Belakang &amp; Sejarah</a>
+            <a href="#" data-modal="Visi dan Misi LJBM">Visi, Misi &amp; Objektif</a>
+            <a href="#" data-modal="Carta Organisasi &amp; Ahli Lembaga">Carta Organisasi</a>
+            <a href="#" data-modal="Ahli Lembaga Pengarah">Ahli Lembaga Pengarah</a>
+            <a href="#" data-modal="Akta Juruukur Bahan 1967 (Akta 487)">Akta Juruukur Bahan 1967</a>
+            <a href="#" data-modal="Kod Etika &amp; Tatakelakuan">Kod Etika Profesional</a>
+          </div>
+        </li>
+
+        <!-- 2. Awam -->
+        <li>
+          <button aria-expanded="false">
+            <span data-t="m_public">Awam</span>
+            <svg class="menu-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="sub">
+            <a href="#" data-modal="Direktori Juruukur Bahan Berdaftar">Semakan Juruukur Bahan</a>
+            <a href="#" data-modal="Direktori Firma Perunding Berdaftar">Direktori Firma Perunding</a>
+            <a href="#" data-modal="Skala FI Piawai LJBM">Skala FI Piawai</a>
+            <a href="#aduan" data-modal="Aduan &amp; Integriti">Aduan &amp; Maklum Balas</a>
+            <a href="#" data-modal="Muat Turun Dokumen">Muat Turun Dokumen &amp; Borang</a>
+          </div>
+        </li>
+
+        <!-- 3. Perkhidmatan Pendaftaran -->
+        <li>
+          <button aria-expanded="false">
+            <span data-t="m_reg">Perkhidmatan Pendaftaran</span>
+            <svg class="menu-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="sub">
+            <a href="#perkhidmatan" data-modal="Pendaftaran APC">Pendaftaran APC Sesi 2026</a>
+            <a href="#perkhidmatan" data-modal="Pendaftaran Baharu">Pendaftaran Baharu</a>
+            <a href="#perkhidmatan" data-modal="Syarikat/Firma Perunding Ukur Bahan">Pendaftaran Firma Perunding</a>
+            <a href="#perkhidmatan" data-modal="Pembaharuan Perakuan Amalan">Pembaharuan Perakuan Amalan</a>
+            <a href="#" data-modal="Peperiksaan Penilaian Kompetensi">Peperiksaan Profesional (APC)</a>
+          </div>
+        </li>
+
+        <!-- 4. Pusat Info -->
+        <li>
+          <button aria-expanded="false">
+            <span data-t="m_info">Pusat Info</span>
+            <svg class="menu-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="sub">
+            <a href="#berita" data-tab="p">Pengumuman Terkini</a>
+            <a href="#berita" data-tab="b">Buletin QS-Link</a>
+            <a href="#berita" data-tab="l">Laporan Tahunan</a>
+            <a href="#" data-modal="Pekeliling Lembaga">Pekeliling &amp; Panduan</a>
+            <a href="#berita" data-tab="t">Iklan Tender &amp; Sebut Harga</a>
+          </div>
+        </li>
+
+        <!-- 5. Hubungi Kami -->
+        <li>
+          <button aria-expanded="false">
+            <span data-t="m_contact">Hubungi Kami</span>
+            <svg class="menu-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="sub">
+            <a href="#hubungi">Maklumat Ibu Pejabat</a>
+            <a href="#" data-modal="Waktu Operasi Kaunter">Waktu Kaunter Perkhidmatan</a>
+            <a href="#aduan" data-modal="Aduan dan Maklum Balas">Aduan &amp; Maklum Balas</a>
+            <a href="#" data-modal="Peta Lokasi & Panduan Parkir">Peta Lokasi &amp; Arah Laluan</a>
+          </div>
+        </li>
+
+        <li class="sep" aria-hidden="true"></li>
+        
+        <!-- Language Switcher -->
+        <li>
+          <button id="lang" aria-pressed="false">
+            <span>Bahasa Malaysia</span>
+            <svg class="menu-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </li>
+        
+        <!-- Accessibility Button with uploaded wheelchair-icon.png (24px x 24px) -->
+        <li>
+          <button id="acc" aria-label="Alat Aksesibiliti (W3C)" aria-expanded="false" title="Alat Aksesibiliti (W3C)">
+            <img src="wheelchair-icon.png" alt="Aksesibiliti" class="wheelchair-icon-img">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Search Dropdown Form -->
+  <form id="sbar" role="search">
+    <input id="q" type="search" placeholder="Cari pengumuman, tender, buletin..." aria-label="Carian">
+    <button type="submit">Cari</button>
+  </form>
+</header>
+
+<main id="main-content">
+
+<!-- HERO SECTION: 50% / 50% AS IN MOCKUP -->
+<section class="hero" aria-roledescription="carousel" aria-label="Sorotan Utama">
+  <!-- Slide 1: Welcome (Mockup Screenshot Match) -->
+  <div class="slide on">
+    <!-- Unsplash High-Resolution Kuala Lumpur Sunset Skyline Image -->
+    <div class="img" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80');" role="img" aria-label="Pemandangan bandaraya Kuala Lumpur waktu senja"></div>
+    <div class="txt">
+      <h1 data-t="hero_title">Selamat Datang ke Portal Rasmi Lembaga Juruukur Bahan Malaysia</h1>
+      <p data-t="hero_desc">Memperkasa industri ukur bahan melalui tadbir urus profesional, amalan terbaik, pembangunan mampan dan penyampaian perkhidmatan yang berkualiti demi kemajuan negara.</p>
+      <div class="btns">
+        <a class="b1" href="#" data-modal="Mengenai LJBM" data-t="b_about">Mengenai LJBM</a>
+        <a class="b2" href="#perkhidmatan" data-t="b_services">Terokai Perkhidmatan LJBM</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2: APC Registration -->
+  <div class="slide">
+    <div class="img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');" role="img" aria-label="Juruukur bahan memeriksa pelan pembinaan"></div>
+    <div class="txt">
+      <h1>Pendaftaran APC Sesi 2026 Kini Dibuka</h1>
+      <p>Permohonan dan pembaharuan Sijil Amalan Tahunan bagi Juruukur Bahan Berdaftar kini boleh dibuat secara dalam talian dengan mudah dan selamat.</p>
+      <div class="btns">
+        <a class="b1" href="#perkhidmatan">Mohon Sekarang</a>
+        <a class="b2" href="#berita">Lihat Pengumuman</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Tenders -->
+  <div class="slide">
+    <div class="img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80');" role="img" aria-label="Bangunan moden korporat"></div>
+    <div class="txt">
+      <h1>Tender dan Sebut Harga Terkini</h1>
+      <p>Semak iklan sebut harga dan tender perolehan kerajaan yang dikeluarkan oleh Lembaga Juruukur Bahan Malaysia untuk rujukan pihak yang berminat.</p>
+      <div class="btns">
+        <a class="b1" href="#berita" data-tab="t">Lihat Tender</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrow Slider Controls -->
+  <button class="arr l" data-h="-1" aria-label="Sebelumnya">‹</button>
+  <button class="arr r" data-h="1" aria-label="Seterusnya">›</button>
+</section>
+
+<!-- PERKHIDMATAN KAMI SECTION (FLOWS OUTSIDE WEBSITE TO RIGHT EDGE) -->
+<section class="sec sec-services" id="perkhidmatan">
+  <div class="wrap">
+    <div class="title-bar">
+      <h2 data-t="s_title">Perkhidmatan Kami</h2>
+    </div>
+  </div>
+
+  <div class="cwrap cwrap-bleed">
+    <button class="sv-arr l" data-s="-1" aria-label="Sebelumnya">‹</button>
+
+    <div class="track" id="trk">
+      <!-- Card 1: Pendaftaran APC (Unsplash Engineer with Hardhat Image) -->
+      <a class="card" href="#" data-modal="Pendaftaran APC" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');">
+        <div class="cap c-b">
+          <h3>Pendaftaran APC</h3>
+          <p>Permohonan dan pembaharuan sijil amalan tahunan bagi Juruukur Bahan berdaftar.</p>
+        </div>
+      </a>
+
+      <!-- Card 2: Pendaftaran Baharu (Unsplash Surveyor with Theodolite Tripod Image) -->
+      <a class="card" href="#" data-modal="Pendaftaran Baharu" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80');">
+        <div class="cap c-g">
+          <h3>Pendaftaran Baharu</h3>
+          <p>Permohonan pendaftaran bagi individu yang ingin menjadi Juruukur Bahan berdaftar di Malaysia.</p>
+        </div>
+      </a>
+
+      <!-- Card 3: Syarikat/Firma Perunding Ukur Bahan (Unsplash Petronas Twin Towers Skyline Image) -->
+      <a class="card" href="#" data-modal="Syarikat/Firma Perunding Ukur Bahan" style="background-image: url('https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=800&q=80');">
+        <div class="cap c-y">
+          <h3>Syarikat/Firma Perunding Ukur Bahan</h3>
+          <p>Senarai firma perunding ukur bahan berdaftar dengan LJBM.</p>
+        </div>
+      </a>
+
+      <!-- Card 4: Semakan Pendaftar (Unsplash Modern Architecture Image) -->
+      <a class="card" href="#" data-modal="Semakan Pendaftar" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80');">
+        <div class="cap c-b">
+          <h3>Semakan Pendaftar</h3>
+          <p>Semak status pendaftaran Juruukur Bahan dan firma yang diiktiraf di Malaysia.</p>
+        </div>
+      </a>
+
+      <!-- Card 5: Khidmat Nasihat & Aduan Profesional -->
+      <a class="card" href="#" data-modal="Khidmat Nasihat & Aduan" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');">
+        <div class="cap c-g">
+          <h3>Khidmat Nasihat & Aduan</h3>
+          <p>Saluran aduan tatatertib serta khidmat nasihat perundangan Akta 117.</p>
+        </div>
+      </a>
+
+      <!-- Card 6: Program CPD & Latihan -->
+      <a class="card" href="#" data-modal="Program CPD & Latihan" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80');">
+        <div class="cap c-y">
+          <h3>Program CPD & Latihan</h3>
+          <p>Pembangunan profesional berterusan untuk memperkasa kompetensi amalan.</p>
+        </div>
+      </a>
+    </div>
+
+    <button class="sv-arr r" data-s="1" aria-label="Seterusnya">›</button>
+  </div>
+
+  <div class="wrap">
+    <!-- Centered Indicator Dots -->
+    <div class="dots" id="sd"></div>
+  </div>
+</section>
+
+<!-- KETAHUI PERKEMBANGAN TERBARU (CENTER-ALIGNED BUTTONS, NEWS, BULLETINS, TENDERS) -->
+<section class="sec news" id="berita">
+  <div class="wrap">
+    <div class="nh">
+      <h2 data-t="news_heading">Ketahui Perkembangan Terbaru</h2>
+      <a class="dark-btn" href="#" data-modal="Semua Pengumuman &amp; Penerbitan">Lihat Semua Pengumuman &amp; Penerbitan Terbaru</a>
+    </div>
+
+    <div class="ng">
+      <!-- Tabs Column (Text Buttons Aligned Center) -->
+      <div class="tabs" role="tablist" id="tabs">
+        <button role="tab" aria-selected="true" data-c="p">Pengumuman</button>
+        <button role="tab" aria-selected="false" data-c="b">Buletin LJBM</button>
+        <button role="tab" aria-selected="false" data-c="l">Laporan Tahunan</button>
+        <button role="tab" aria-selected="false" data-c="t">Tender/Sebutharga</button>
+      </div>
+
+      <!-- Articles Grid Column -->
+      <div class="list" id="list" role="tabpanel" aria-live="polite"></div>
+      <div id="empty">Tiada rekod dijumpai.</div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE SLIDER: SEAMLESS INFINITE LOOP SLIDER WITH VISIBLE LEFT & RIGHT PEEKS -->
+<section class="notice">
+  <div class="notice-slider-container" id="notice-slider-box">
+    <!-- Left and Right Slider Arrows -->
+    <button class="n-nav-btn l" id="btn-notice-prev" aria-label="Notis Sebelumnya">‹</button>
+    <button class="n-nav-btn r" id="btn-notice-next" aria-label="Notis Seterusnya">›</button>
+
+    <!-- Multi-Slide Infinite Track (Initialized dynamically in JS for seamless looping) -->
+    <div class="notice-track" id="notice-track">
+      <!-- Slide 0: Modern Blue Architectural Facade (Left Peek in Mockup) -->
+      <div class="notice-slide slide-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80');" data-orig-idx="0">
+        <div class="slide-img-overlay">
+          <span style="font-size:12px; font-weight:700; text-transform:uppercase; color:#f5b800; margin-bottom:6px;">✦ Pembangunan Profesional Berterusan</span>
+          <h3 style="color:#ffffff; font-size:24px; font-weight:700;">Garis Panduan Pengiktirafan Amalan Ukur Bahan 2026</h3>
+          <p style="font-size:14px; color:#e2e8f0; margin-top:8px;">Pematuhan standard amalan antarabangsa bagi industri pembinaan mampan.</p>
+        </div>
+      </div>
+
+      <!-- Slide 1: Warning Notice (Center Slide in Mockup) -->
+      <div class="notice-slide" data-orig-idx="1">
+        <svg class="notice-crest" aria-hidden="true"><use href="#logo-ljbm"/></svg>
+        <h3 data-t="notice_1_title">NOTIS LARANGAN INDIVIDU TIDAK BERDAFTAR<br>SEBAGAI JURUUKUR BAHAN</h3>
+        <hr>
+        <div class="row">
+          <span>TEKAN</span>
+          <a class="pill" href="#" data-modal="Notis Larangan Individu Tidak Berdaftar">BUTANG</a>
+          <span>INI UNTUK MAKLUMAT LANJUT</span>
+        </div>
+        <div class="soc">
+          <a href="#" data-modal="www.bqsm.gov.my">
+            <!-- Lucide Globe Icon -->
+            <svg class="lucide-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>www.bqsm.gov.my</span>
+          </a>
+          <!-- Lucide X, Facebook, Instagram Icons -->
+          <span style="display:inline-flex;align-items:center;gap:10px;">
+            <svg class="lucide-icon" viewBox="0 0 24 24"><path d="M4 4l16 16M4 20L20 4"/></svg>
+            <svg class="lucide-icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg class="lucide-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </span>
+          <span>Lembaga Juruukur Bahan Malaysia</span>
+        </div>
+      </div>
+
+      <!-- Slide 2: Cadangan Pindaan (Right Peek in Mockup) -->
+      <div class="notice-slide slide-poster" data-orig-idx="2">
+        <svg class="notice-crest" style="margin-bottom:8px;" aria-hidden="true"><use href="#logo-ljbm"/></svg>
+        <h3 style="color:#ffffff; font-size:clamp(22px, 3.2vw, 36px); line-height:1.2;">CADANGAN PINDAAN<br><tspan style="color:#f5b800;">AKTA JURUUKUR BAHAN 1967</tspan></h3>
+        <hr style="border-top-color:#f5b800; width:50%;">
+        <div class="row" style="color:#ffffff; margin-top:10px;">
+          <span>TEKAN</span>
+          <a class="pill" href="#" data-modal="Cadangan Pindaan Akta Juruukur Bahan" style="background:#f5b800; color:#000;">BUTANG</a>
+          <span>UNTUK MAKLUM BALAS AWAM</span>
+        </div>
+        <p style="font-size:13px; color:#e2e8f0; margin-top:14px;">Sesi perundingan awam bagi memperkukuh tadbir urus dan teknologi ukur bahan digital.</p>
+      </div>
+
+      <!-- Slide 3: APC Renewal Announcement -->
+      <div class="notice-slide" data-orig-idx="3">
+        <svg class="notice-crest" aria-hidden="true"><use href="#logo-ljbm"/></svg>
+        <h3 style="color:#002278;">PENDAFTARAN APC 2026<br>KINI DIBUKA SECARA ATAS TALIAN</h3>
+        <hr>
+        <div class="row">
+          <span>TEKAN</span>
+          <a class="pill" href="#perkhidmatan">BUTANG</a>
+          <span>UNTUK PERMOHONAN</span>
+        </div>
+        <div class="soc">
+          <span>Sesi: 2026</span>
+          <span>•</span>
+          <span>Tarikh Tutup Tanpa Penalti: 30 November 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notice Slider Indicators -->
+  <div class="dots" id="nd"></div>
+</section>
+
+<!-- PARTNERS SECTION (EXACT 10 LOGOS AS IN MOCKUP) -->
+<section class="partners wrap">
+  <p>Kami bekerjasama dengan agensi berkaitan untuk menterjemahkan idea dan strategi LJBM kepada realiti.</p>
+  
+  <div class="pg">
+    <!-- 1. MyGovernment -->
+    <a href="#" class="partner-link" data-modal="Portal Rasmi Kerajaan Malaysia (MyGovernment)">
+      <img src="MyGovernment.png" alt="Portal Rasmi Kerajaan Malaysia (MyGovernment)" class="partner-logo-img">
+    </a>
+
+    <!-- 2. MDEC -->
+    <a href="#" class="partner-link" data-modal="Malaysia Digital Economy Corporation (MDEC)">
+      <img src="MDEC.png" alt="Malaysia Digital Economy Corporation (MDEC)" class="partner-logo-img">
+    </a>
+
+    <!-- 3. RISM (Royal Institution of Surveyors Malaysia) -->
+    <a href="#" class="partner-link" data-modal="Royal Institution of Surveyors Malaysia (RISM)">
+      <img src="RISM.png" alt="Royal Institution of Surveyors Malaysia (RISM)" class="partner-logo-img">
+    </a>
+
+    <!-- 4. JKR (Jabatan Kerja Raya) -->
+    <a href="#" class="partner-link" data-modal="Jabatan Kerja Raya Malaysia (JKR)">
+      <img src="JKR.png" alt="Jabatan Kerja Raya Malaysia (JKR)" class="partner-logo-img">
+    </a>
+
+    <!-- 5. LAM (Lembaga Arkitek Malaysia) -->
+    <a href="#" class="partner-link" data-modal="Lembaga Arkitek Malaysia (LAM)">
+      <img src="Lembaga-Arkitek-Malaysia.png" alt="Lembaga Arkitek Malaysia (LAM)" class="partner-logo-img">
+    </a>
+
+    <!-- 6. BEM (Board of Engineers Malaysia) -->
+    <a href="#" class="partner-link" data-modal="Board of Engineers Malaysia (BEM)">
+      <img src="BEM.png" alt="Board of Engineers Malaysia (BEM)" class="partner-logo-img">
+    </a>
+
+    <!-- 7. CIDB Malaysia -->
+    <a href="#" class="partner-link" data-modal="Construction Industry Development Board Malaysia (CIDB)">
+      <img src="CIDb.png" alt="Construction Industry Development Board Malaysia (CIDB)" class="partner-logo-img">
+    </a>
+
+    <!-- 8. PAQS (Pacific Association of Quantity Surveyors) -->
+    <a href="#" class="partner-link" data-modal="Pacific Association of Quantity Surveyors (PAQS)">
+      <img src="PAQS.png" alt="Pacific Association of Quantity Surveyors (PAQS)" class="partner-logo-img">
+    </a>
+
+    <!-- 9. RICS (Royal Institution of Chartered Surveyors) -->
+    <a href="#" class="partner-link" data-modal="Royal Institution of Chartered Surveyors (RICS)">
+      <img src="RICS.png" alt="Royal Institution of Chartered Surveyors (RICS)" class="partner-logo-img">
+    </a>
+
+    <!-- 10. MalaysiaBiz -->
+    <a href="#" class="partner-link" data-modal="MalaysiaBiz Portal Pelesenan Perniagaan">
+      <img src="MalaysiaBiz.png" alt="MalaysiaBiz Portal Pelesenan Perniagaan" class="partner-logo-img">
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER (EXACT MOCKUP MATCH) -->
+<footer id="hubungi">
+  <div class="wrap">
+    <div class="fg">
+      <!-- Column 1: Real Crests Lockup, Address, Contacts & Socials -->
+      <div>
+        <div style="margin-bottom:14px;">
+          <img src="logo-ljbm-footer.png" alt="Lembaga Juruukur Bahan Malaysia" style="height:52px; width:auto; max-width:100%; object-fit:contain;">
+        </div>
+        <div class="ct">
+          <div class="ct-row">
+            <!-- Lucide Home / MapPin Icon -->
+            <svg class="lucide-icon" style="width:16px;height:16px;flex-shrink:0;margin-top:3px;" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Lembaga Juruukur Bahan Malaysia<br>Aras 17, Blok F, Ibu Pejabat JKR,<br>Jalan Sultan Salahuddin,<br>50582 Kuala Lumpur</span>
+          </div>
+          <div class="ct-row">
+            <!-- Lucide Phone Icon -->
+            <svg class="lucide-icon" style="width:15px;height:15px;flex-shrink:0;margin-top:2px;" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+60326107809">603 – 2610 7809 / 603 – 2692 5680</a>
+          </div>
+          <div class="ct-row">
+            <!-- Lucide Mail Icon -->
+            <svg class="lucide-icon" style="width:15px;height:15px;flex-shrink:0;margin-top:2px;" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@bqsm.gov.my">info[at]bqsm.gov.my</a>
+          </div>
+        </div>
+
+        <!-- Social Icons (TikTok, YouTube, X, Facebook, Instagram) -->
+        <div class="soc2">
+          <a href="#" data-modal="TikTok LJBM" aria-label="TikTok">♪</a>
+          <a href="#" data-modal="YouTube LJBM" aria-label="YouTube">▶</a>
+          <a href="#" data-modal="X (Twitter) LJBM" aria-label="X">𝕏</a>
+          <a href="#" data-modal="Facebook LJBM" aria-label="Facebook">f</a>
+          <a href="#" data-modal="Instagram LJBM" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Pautan Luar (2-column list matching mockup) -->
+      <div>
+        <h4>Pautan Luar</h4>
+        <ul class="two-col">
+          <li><a href="#" data-modal="MyGovernment">MyGovernment</a></li>
+          <li><a href="#" data-modal="MDEC">MDEC</a></li>
+          <li><a href="#" data-modal="RISM">RISM</a></li>
+          <li><a href="#" data-modal="JKR">JKR</a></li>
+          <li><a href="#" data-modal="Lembaga Arkitek Malaysia">Lembaga Arkitek Malaysia</a></li>
+          <li><a href="#" data-modal="Badan Jurutera Malaysia">Badan Jurutera Malaysia</a></li>
+          <li><a href="#" data-modal="CIDB">CIDB</a></li>
+          <li><a href="#" data-modal="PAQS">PAQS</a></li>
+          <li><a href="#" data-modal="RICS">RICS</a></li>
+          <li><a href="#" data-modal="MalaysiaBiz">MalaysiaBiz</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Pautan Pantas -->
+      <div>
+        <h4>Pautan Pantas</h4>
+        <ul>
+          <li><a href="#" data-modal="Akta Juruukur Bahan">Akta Juruukur Bahan</a></li>
+          <li><a href="#" data-modal="Akreditasi Yang Diiktiraf">Akreditasi Yang Diiktiraf</a></li>
+          <li><a href="#" data-modal="Peta Laman">Peta Laman</a></li>
+          <li><a href="#" data-modal="Skala FI">Skala FI</a></li>
+          <li><a href="#" data-modal="Pekeliling LJBM">Pekeliling LJBM</a></li>
+          <li><a href="#" data-modal="Buletin QS-Link">Buletin QS-Link</a></li>
+          <li><a href="#" data-modal="Assessment of Professional Competence (APC)">Assessment of Professional Competence (APC)</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Statistik Pelawat -->
+      <div>
+        <h4>Statistik Pelawat</h4>
+        <div class="st">
+          <div><span>Hari Ini</span><span id="v1">1453</span></div>
+          <div><span>Semalam</span><span>523</span></div>
+          <div><span>Minggu Ini</span><span>29769</span></div>
+          <div><span>Bulan Ini</span><span>8643689</span></div>
+          <div><span>Keseluruhan</span><span>78868969</span></div>
+          <p>Kemaskini Terakhir : 28 Julai 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Legal Bar -->
+  <div class="bar">
+    <div class="wrap">
+      <span>Paparan terbaik menggunakan Mozilla Firefox versi 50 dan ke atas dengan resolusi skrin minimum 1366 × 768 piksel.<br>Hak Cipta Terpelihara © 2026 Lembaga Juruukur Bahan Malaysia.</span>
+      <nav>
+        <a href="#" data-modal="Penafian">Penafian</a>
+        <a href="#" data-modal="Dasar Privasi">Dasar Privasi</a>
+        <a href="#" data-modal="Dasar Keselamatan">Dasar Keselamatan</a>
+        <a href="#" data-modal="Data Terbuka">Data Terbuka</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- W3C ACCESSIBILITY TOOLS POPOUT DIALOG (MATCHING ATTACHED REFERENCE) -->
+<div id="a11y-overlay" role="dialog" aria-modal="true" aria-labelledby="a11y-title">
+  <div class="a11y-panel" id="a11y-panel">
+    <!-- Header -->
+    <div class="a11y-hdr">
+      <h2 class="a11y-title" id="a11y-title">Accessibility Tools</h2>
+      <div class="a11y-hdr-right">
+        <button type="button" class="a11y-btn-reset" id="a11y-reset" title="Reset Semua Tetapan" aria-label="Reset semua tetapan aksesibiliti">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+        </button>
+        <button type="button" class="a11y-btn-close" id="a11y-close" title="Tutup" aria-label="Tutup panel aksesibiliti">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 2-Column Action Cards Grid -->
+    <div class="a11y-grid">
+      <!-- 1. Invert colors -->
+      <button type="button" class="a11y-card" data-a11y="invert">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2 A10 10 0 0 1 12 22 Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="a11y-card-text">Invert colors</span>
+      </button>
+
+      <!-- 2. Monochrome -->
+      <button type="button" class="a11y-card" data-a11y="mono">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="4.5" y1="12" x2="12" y2="4.5"/>
+            <line x1="6" y1="18" x2="18" y2="6"/>
+            <line x1="12" y1="19.5" x2="19.5" y2="12"/>
+          </svg>
+        </span>
+        <span class="a11y-card-text">Monochrome</span>
+      </button>
+
+      <!-- 3. Dark contrast -->
+      <button type="button" class="a11y-card" data-a11y="dark-contrast">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M12.3 3a9 9 0 1 0 8.7 8.7c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.35-.05-.72-.08-1.06-.1z"/>
+          </svg>
+        </span>
+        <span class="a11y-card-text">Dark contrast</span>
+      </button>
+
+      <!-- 4. Light contrast -->
+      <button type="button" class="a11y-card" data-a11y="light-contrast">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </span>
+        <span class="a11y-card-text">Light contrast</span>
+      </button>
+
+      <!-- 5. Low saturation -->
+      <button type="button" class="a11y-card" data-a11y="low-sat">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M2.5 14 A10 10 0 0 0 21.5 14 Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="a11y-card-text">Low saturation</span>
+      </button>
+
+      <!-- 6. High saturation -->
+      <button type="button" class="a11y-card" data-a11y="high-sat">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M2 12 A10 10 0 0 0 22 12 Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="a11y-card-text">High saturation</span>
+      </button>
+
+      <!-- 7. Highlight links -->
+      <button type="button" class="a11y-card" data-a11y="highlight-links">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="a11y-card-text">Highlight links</span>
+      </button>
+
+      <!-- 8. Highlight headings -->
+      <button type="button" class="a11y-card" data-a11y="highlight-headings">
+        <span class="a11y-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <text x="12" y="16" font-size="9" font-weight="800" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" text-anchor="middle" fill="currentColor" stroke="none">H1</text>
+          </svg>
+        </span>
+        <span class="a11y-card-text">Highlight headings</span>
+      </button>
+    </div>
+
+    <!-- 4 Sliders Rows -->
+    <div class="a11y-sliders">
+      <!-- Row 1: Content scaling -->
+      <div class="a11y-row">
+        <span class="a11y-row-label">Content scaling</span>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-bar">
+            <div class="a11y-bar-fill" id="fill-scaling" style="width: 28.5%;"></div>
+          </div>
+        </div>
+        <span class="a11y-row-val" id="val-scaling">100%</span>
+        <div class="a11y-step-group">
+          <button type="button" class="a11y-btn-step" data-step="scaling" data-dir="-1" aria-label="Kurangkan content scaling">—</button>
+          <button type="button" class="a11y-btn-step" data-step="scaling" data-dir="1" aria-label="Tambah content scaling">+</button>
+        </div>
+      </div>
+
+      <!-- Row 2: Font size -->
+      <div class="a11y-row">
+        <span class="a11y-row-label">Font size</span>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-bar">
+            <div class="a11y-bar-fill" id="fill-font" style="width: 28.5%;"></div>
+          </div>
+        </div>
+        <span class="a11y-row-val" id="val-font">100%</span>
+        <div class="a11y-step-group">
+          <button type="button" class="a11y-btn-step" data-step="font" data-dir="-1" aria-label="Kurangkan saiz fon">—</button>
+          <button type="button" class="a11y-btn-step" data-step="font" data-dir="1" aria-label="Tambah saiz fon">+</button>
+        </div>
+      </div>
+
+      <!-- Row 3: Line height -->
+      <div class="a11y-row">
+        <span class="a11y-row-label">Line height</span>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-bar">
+            <div class="a11y-bar-fill" id="fill-line" style="width: 0%;"></div>
+          </div>
+        </div>
+        <span class="a11y-row-val" id="val-line">100%</span>
+        <div class="a11y-step-group">
+          <button type="button" class="a11y-btn-step" data-step="line" data-dir="-1" aria-label="Kurangkan jarak baris">—</button>
+          <button type="button" class="a11y-btn-step" data-step="line" data-dir="1" aria-label="Tambah jarak baris">+</button>
+        </div>
+      </div>
+
+      <!-- Row 4: Letter spacing -->
+      <div class="a11y-row">
+        <span class="a11y-row-label">Letter spacing</span>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-bar">
+            <div class="a11y-bar-fill" id="fill-letter" style="width: 0%;"></div>
+          </div>
+        </div>
+        <span class="a11y-row-val" id="val-letter">100%</span>
+        <div class="a11y-step-group">
+          <button type="button" class="a11y-btn-step" data-step="letter" data-dir="-1" aria-label="Kurangkan jarak huruf">—</button>
+          <button type="button" class="a11y-btn-step" data-step="letter" data-dir="1" aria-label="Tambah jarak huruf">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="a11y-ftr">
+      <div class="a11y-brand">
+        <svg class="a11y-circles-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="7" cy="14" r="5" fill="#0284c7" fill-opacity="0.85"/>
+          <circle cx="17" cy="14" r="5" fill="#10b981" fill-opacity="0.85"/>
+          <circle cx="12" cy="7" r="5" fill="#f59e0b" fill-opacity="0.85"/>
+        </svg>
+        <span>djextensions</span>
+      </div>
+      <a href="#" class="a11y-ftr-link" onclick="return false;">Web Accessibility plugin by DJ-Extensions.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DIALOG -->
+<div id="md" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div id="md-box">
+    <h3 id="mt">Maklumat Prototaip</h3>
+    <p id="mp">Halaman ini ialah prototaip Portal Rasmi Lembaga Juruukur Bahan Malaysia. Kandungan penuh sistem ini dipautkan mengikut kehendak mockup reka bentuk.</p>
+    <button class="dark-btn" id="mc">Tutup</button>
+  </div>
+</div>
+
+<!-- TOAST COMPONENT -->
+<div id="toast" role="status"></div>
+
+<!-- VANILLA JAVASCRIPT APP LOGIC -->
+<script>
+(function() {
+  'use strict';
+
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  const toast = m => {
+    const t = $('#toast');
+    t.textContent = m;
+    t.classList.add('on');
+    clearTimeout(t._t);
+    t._t = setTimeout(() => t.classList.remove('on'), 2500);
+  };
+
+  /* Modal System */
+  const md = $('#md');
+  const mt = $('#mt');
+  const mp = $('#mp');
+  const mc = $('#mc');
+
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-modal]');
+    if (a) {
+      e.preventDefault();
+      mt.textContent = a.dataset.modal;
+      mp.textContent = `Anda telah memilih modul: "${a.dataset.modal}". Sistem perkhidmatan portal ini sedang berjalan dalam mod prototaip interaktif.`;
+      md.classList.add('on');
+      mc.focus();
+    } else if (e.target.closest('a[href="#"]')) {
+      e.preventDefault();
+    }
+
+    if (e.target === md || e.target === mc) {
+      md.classList.remove('on');
+    }
+
+    // Close Mega Menus on outside click
+    if (!e.target.closest('.nav > li')) {
+      $$('.nav > li.open').forEach(l => {
+        l.classList.remove('open');
+        const b = $('button', l);
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      md.classList.remove('on');
+      if (typeof closeA11yModal === 'function') closeA11yModal();
+      $$('.nav > li.open').forEach(l => {
+        l.classList.remove('open');
+        const b = $('button', l);
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      $('#sbar').classList.remove('on');
+    }
+  });
+
+  /* Normal Dropdown Menu & Mobile Drawer */
+  $$('.nav > li').forEach(li => {
+    const b = $('button', li);
+    if (!b || !$('.sub', li)) return;
+
+    b.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = li.classList.contains('open');
+      $$('.nav > li.open').forEach(x => {
+        x.classList.remove('open');
+        const btn = $('button', x);
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+      li.classList.toggle('open', !isOpen);
+      b.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  $('#ham').onclick = function() {
+    const o = $('#hr').classList.toggle('on');
+    this.setAttribute('aria-expanded', o);
+  };
+
+  $$('.nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      $('#hr').classList.remove('on');
+      $$('.nav > li.open').forEach(l => l.classList.remove('open'));
+    });
+  });
+
+  /* Search Bar */
+  $('#sb').onclick = () => {
+    const on = $('#sbar').classList.toggle('on');
+    if (on) $('#q').focus();
+  };
+
+  $('#sbar').onsubmit = e => {
+    e.preventDefault();
+    searchQuery = $('#q').value.trim().toLowerCase();
+    renderNews();
+    $('#berita').scrollIntoView({ behavior: 'smooth' });
+    toast(searchQuery ? `Hasil carian: "${searchQuery}"` : 'Carian dikosongkan');
+  };
+
+  /* Language Switcher */
+  let isEn = false;
+  $('#lang').onclick = function() {
+    isEn = !isEn;
+    document.documentElement.lang = isEn ? 'en' : 'ms';
+    $('span', this).textContent = isEn ? 'English' : 'Bahasa Malaysia';
+    this.setAttribute('aria-pressed', isEn);
+    toast(isEn ? 'Language: English' : 'Bahasa: Bahasa Malaysia');
+  };
+
+  /* ==========================================================================
+     W3C ACCESSIBILITY TOOLS INTERACTIVITY (MATCHING USER REFERENCE)
+     ========================================================================== */
+  const a11yOverlay = $('#a11y-overlay');
+  const a11yPanel = $('#a11y-panel');
+  const accBtn = $('#acc');
+  const a11yCloseBtn = $('#a11y-close');
+  const a11yResetBtn = $('#a11y-reset');
+
+  function openA11yModal() {
+    a11yOverlay.classList.add('open');
+    accBtn.setAttribute('aria-expanded', 'true');
+    a11yCloseBtn.focus();
+  }
+
+  function closeA11yModal() {
+    a11yOverlay.classList.remove('open');
+    accBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  accBtn.onclick = function(e) {
+    e.stopPropagation();
+    if (a11yOverlay.classList.contains('open')) {
+      closeA11yModal();
+    } else {
+      openA11yModal();
+    }
+  };
+
+  a11yCloseBtn.onclick = closeA11yModal;
+
+  a11yOverlay.onclick = function(e) {
+    if (e.target === a11yOverlay) {
+      closeA11yModal();
+    }
+  };
+
+  // 8 Quick Action Toggle Buttons
+  const a11yState = {
+    invert: false,
+    mono: false,
+    'dark-contrast': false,
+    'light-contrast': false,
+    'low-sat': false,
+    'high-sat': false,
+    'highlight-links': false,
+    'highlight-headings': false
+  };
+
+  $$('[data-a11y]').forEach(btn => {
+    btn.onclick = () => {
+      const type = btn.dataset.a11y;
+
+      // Handle mutual exclusions for contrasts and saturations
+      if (type === 'dark-contrast' && !a11yState['dark-contrast']) {
+        a11yState['light-contrast'] = false;
+        document.documentElement.classList.remove('a11y-light-contrast');
+        const lc = $('[data-a11y="light-contrast"]');
+        if (lc) lc.classList.remove('active');
+      } else if (type === 'light-contrast' && !a11yState['light-contrast']) {
+        a11yState['dark-contrast'] = false;
+        document.documentElement.classList.remove('a11y-dark-contrast');
+        const dc = $('[data-a11y="dark-contrast"]');
+        if (dc) dc.classList.remove('active');
+      }
+
+      if (type === 'low-sat' && !a11yState['low-sat']) {
+        a11yState['high-sat'] = false;
+        document.documentElement.classList.remove('a11y-high-sat');
+        const hs = $('[data-a11y="high-sat"]');
+        if (hs) hs.classList.remove('active');
+      } else if (type === 'high-sat' && !a11yState['high-sat']) {
+        a11yState['low-sat'] = false;
+        document.documentElement.classList.remove('a11y-low-sat');
+        const ls = $('[data-a11y="low-sat"]');
+        if (ls) ls.classList.remove('active');
+      }
+
+      a11yState[type] = !a11yState[type];
+      btn.classList.toggle('active', a11yState[type]);
+      document.documentElement.classList.toggle(`a11y-${type}`, a11yState[type]);
+      
+      const label = $('.a11y-card-text', btn)?.textContent || type;
+      toast(a11yState[type] ? `${label}: Diaktifkan` : `${label}: Dinyahaktifkan`);
+    };
+  });
+
+  // 4 Sliders Configuration
+  const sliderConfig = {
+    scaling: { min: 80, max: 150, step: 10, def: 100, val: 100 },
+    font: { min: 80, max: 150, step: 10, def: 100, val: 100 },
+    line: { min: 100, max: 200, step: 10, def: 100, val: 100 },
+    letter: { min: 100, max: 200, step: 10, def: 100, val: 100 }
+  };
+
+  function updateSliderUI(key) {
+    const cfg = sliderConfig[key];
+    const valEl = $(`#val-${key}`);
+    const fillEl = $(`#fill-${key}`);
+    if (valEl) valEl.textContent = `${cfg.val}%`;
+    if (fillEl) {
+      const pct = Math.max(0, Math.min(100, ((cfg.val - cfg.min) / (cfg.max - cfg.min)) * 100));
+      fillEl.style.width = `${pct}%`;
+    }
+
+    // Apply live styles
+    if (key === 'scaling') {
+      document.body.style.zoom = cfg.val === 100 ? '' : (cfg.val / 100);
+    } else if (key === 'font') {
+      document.documentElement.style.fontSize = cfg.val === 100 ? '' : `${cfg.val}%`;
+    } else if (key === 'line') {
+      document.body.style.lineHeight = cfg.val === 100 ? '' : `${(cfg.val / 100) * 1.5}`;
+    } else if (key === 'letter') {
+      document.body.style.letterSpacing = cfg.val === 100 ? '' : `${((cfg.val - 100) / 100) * 2}px`;
+    }
+  }
+
+  $$('[data-step]').forEach(btn => {
+    btn.onclick = () => {
+      const key = btn.dataset.step;
+      const dir = parseInt(btn.dataset.dir, 10);
+      const cfg = sliderConfig[key];
+      const newVal = Math.max(cfg.min, Math.min(cfg.max, cfg.val + (dir * cfg.step)));
+      cfg.val = newVal;
+      updateSliderUI(key);
+    };
+  });
+
+  // Reset All Button
+  a11yResetBtn.onclick = () => {
+    // Reset all 8 quick toggles
+    Object.keys(a11yState).forEach(k => {
+      a11yState[k] = false;
+      document.documentElement.classList.remove(`a11y-${k}`);
+    });
+    $$('[data-a11y]').forEach(b => b.classList.remove('active'));
+
+    // Reset all 4 sliders
+    Object.keys(sliderConfig).forEach(k => {
+      sliderConfig[k].val = sliderConfig[k].def;
+      updateSliderUI(k);
+    });
+
+    document.body.style.zoom = '';
+    document.documentElement.style.fontSize = '';
+    document.body.style.lineHeight = '';
+    document.body.style.letterSpacing = '';
+    toast('Semua tetapan aksesibiliti telah diset semula');
+  };
+
+  /* Hero Slider (Infinite Loop) */
+  let heroIdx = 0;
+  const heroSlides = $$('.hero .slide');
+  function hero(d) {
+    heroSlides[heroIdx].classList.remove('on');
+    heroIdx = (heroIdx + d + heroSlides.length) % heroSlides.length;
+    heroSlides[heroIdx].classList.add('on');
+  }
+
+  $$('[data-h]').forEach(b => {
+    b.onclick = () => hero(parseInt(b.dataset.h, 10));
+  });
+
+  let heroTimer = setInterval(() => hero(1), 7000);
+  $('.hero').addEventListener('mouseenter', () => clearInterval(heroTimer));
+  $('.hero').addEventListener('mouseleave', () => {
+    clearInterval(heroTimer);
+    heroTimer = setInterval(() => hero(1), 7000);
+  });
+
+  /* Services Carousel (Bleeds from container out to right screen edge) */
+  const trk = $('#trk');
+  const cards = $$('.card', trk);
+  const getPages = () => Math.max(1, cards.length - 2);
+  let svcIdx = 0;
+
+  function svc(i) {
+    const total = getPages();
+    svcIdx = (i + total) % total;
+    if (cards[svcIdx] && cards[0]) {
+      trk.scrollTo({ left: cards[svcIdx].offsetLeft - cards[0].offsetLeft, behavior: 'smooth' });
+    }
+    renderSvcDots();
+  }
+
+  function renderSvcDots() {
+    const d = $('#sd');
+    d.innerHTML = '';
+    const total = getPages();
+    for (let i = 0; i < total; i++) {
+      const b = document.createElement('button');
+      b.className = i === svcIdx ? 'on' : '';
+      b.setAttribute('aria-label', `Slaid ${i + 1}`);
+      b.onclick = () => svc(i);
+      d.appendChild(b);
+    }
+  }
+
+  $$('[data-s]').forEach(b => {
+    b.onclick = () => svc(svcIdx + parseInt(b.dataset.s, 10));
+  });
+
+  // Track touch/drag scrolling across bleed edge
+  trk.addEventListener('scroll', () => {
+    const scrollLeft = trk.scrollLeft;
+    if (!cards[0]) return;
+    const baseOffset = cards[0].offsetLeft;
+    let closest = 0;
+    let minD = Infinity;
+    cards.forEach((c, idx) => {
+      const d = Math.abs((c.offsetLeft - baseOffset) - scrollLeft);
+      if (d < minD) {
+        minD = d;
+        closest = idx;
+      }
+    });
+    if (closest !== svcIdx && closest < getPages()) {
+      svcIdx = closest;
+      renderSvcDots();
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', () => svc(svcIdx));
+  svc(0);
+
+  /* News Data & Tabs with Document Thumbnails matching Mockup */
+  const NEWS_ITEMS = [
+    {
+      c: 'p',
+      d: '28th July 2026',
+      t: 'Iklan Sebut Harga bagi Sebut Harga LJBM/DSH06/2026',
+      x: 'Makluman mengenai iklan sebut harga terkini yang dikeluarkan oleh Lembaga Juruukur Bahan Malaysia untuk rujukan pihak yang berminat.',
+      thumb: `<img src="artikel1.png" alt="Iklan Sebut Harga bagi Sebut Harga LJBM/DSH06/2026" loading="lazy">`
+    },
+    {
+      c: 'p',
+      d: '18th June 2026',
+      t: 'Hebahan: Hari Profesion Teknikal Negara 2026',
+      x: 'Hebahan berkaitan sambutan Hari Profesion Teknikal Negara 2026 bagi meraikan sumbangan profesional dalam bidang teknikal kepada pembangunan...',
+      thumb: `<img src="artikel2.png" alt="Hebahan: Hari Profesion Teknikal Negara 2026" loading="lazy">`
+    },
+    {
+      c: 'p',
+      d: '4th May 2026',
+      t: 'Kenyataan Tawaran Sebut Harga LJBM/DSH05/2026',
+      x: 'Kenyataan rasmi tawaran sebut harga oleh Lembaga Juruukur Bahan Malaysia yang mengandungi maklumat berkaitan untuk perhatian dan tindakan pihak yang...',
+      thumb: `<img src="artikel3.png" alt="Kenyataan Tawaran Sebut Harga LJBM/DSH05/2026" loading="lazy">`
+    },
+    {
+      c: 'b',
+      d: '12th March 2026',
+      t: 'Buletin QS-Link Edisi 1/2026',
+      x: 'Buletin triwulan LJBM mengenai perkembangan profesion, aktiviti lembaga dan notis terkini kepada juruukur bahan berdaftar.',
+      thumb: `
+        <svg viewBox="0 0 300 216" style="width:100%;height:100%;">
+          <rect width="300" height="216" fill="#e8f0fe"/>
+          <rect x="20" y="30" width="260" height="24" fill="#1f4fa3"/>
+          <text x="150" y="47" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff">BULETIN QS-LINK EDISI 1/2026</text>
+          <rect x="30" y="70" width="240" height="8" fill="#cbd5e1"/>
+          <rect x="30" y="86" width="200" height="8" fill="#e2e8f0"/>
+          <rect x="30" y="102" width="220" height="8" fill="#e2e8f0"/>
+        </svg>
+      `
+    },
+    {
+      c: 'l',
+      d: '30th April 2026',
+      t: 'Laporan Tahunan LJBM 2025',
+      x: 'Laporan prestasi dan penyata kewangan tahunan Lembaga Juruukur Bahan Malaysia bagi tahun berakhir 31 Disember 2025.',
+      thumb: `
+        <svg viewBox="0 0 300 216" style="width:100%;height:100%;">
+          <rect width="300" height="216" fill="#fdfcf7"/>
+          <rect x="20" y="30" width="260" height="24" fill="#3b8c3f"/>
+          <text x="150" y="47" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff">LAPORAN TAHUNAN 2025</text>
+          <rect x="30" y="70" width="240" height="8" fill="#cbd5e1"/>
+          <rect x="30" y="86" width="200" height="8" fill="#e2e8f0"/>
+        </svg>
+      `
+    },
+    {
+      c: 't',
+      d: '2nd February 2026',
+      t: 'Tender Perkhidmatan Penyelenggaraan Sistem ICT',
+      x: 'Jemputan tender bagi perkhidmatan penyelenggaraan sistem ICT Lembaga Juruukur Bahan Malaysia untuk tempoh dua tahun.',
+      thumb: `
+        <svg viewBox="0 0 300 216" style="width:100%;height:100%;">
+          <rect width="300" height="216" fill="#ffffff"/>
+          <rect x="20" y="30" width="260" height="24" fill="#f5b800"/>
+          <text x="150" y="47" font-size="11" font-weight="900" text-anchor="middle" fill="#000000">JEMPUTAN TENDER ICT</text>
+          <rect x="30" y="70" width="240" height="8" fill="#cbd5e1"/>
+          <rect x="30" y="86" width="200" height="8" fill="#e2e8f0"/>
+        </svg>
+      `
+    }
+  ];
+
+  let currentNewsCat = 'p';
+  let searchQuery = '';
+
+  function renderNews() {
+    const l = $('#list');
+    const empty = $('#empty');
+
+    const filtered = NEWS_ITEMS.filter(n => {
+      const matchCat = searchQuery ? true : n.c === currentNewsCat;
+      const matchQuery = !searchQuery || (n.t + n.x).toLowerCase().includes(searchQuery);
+      return matchCat && matchQuery;
+    });
+
+    if (filtered.length === 0) {
+      l.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+
+    empty.style.display = 'none';
+    l.innerHTML = filtered.map(n => `
+      <a class="n" href="#" data-modal="${n.t}">
+        <div class="th">${n.thumb}</div>
+        <time>
+          <!-- Lucide Calendar Icon -->
+          <svg class="lucide-icon" style="width:13px;height:13px;" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>${n.d}</span>
+        </time>
+        <h3>${n.t}</h3>
+        <p>${n.x}</p>
+      </a>
+    `).join('');
+  }
+
+  function setNewsTab(c) {
+    currentNewsCat = c;
+    searchQuery = '';
+    $('#q').value = '';
+    $$('#tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.c === c));
+    renderNews();
+  }
+
+  $$('#tabs button').forEach(b => b.onclick = () => setNewsTab(b.dataset.c));
+  $$('[data-tab]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      setNewsTab(a.dataset.tab);
+      $('#berita').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  renderNews();
+
+  /* ==========================================================================
+     SEAMLESS INFINITE LOOP NOTICE CAROUSEL SLIDER
+     ========================================================================== */
+  const noticeSliderBox = $('#notice-slider-box');
+  const noticeTrack = $('#notice-track');
+  const initialNoticeSlides = $$('.notice-slide', noticeTrack);
+  const realCount = initialNoticeSlides.length; // 4 original slides
+
+  // Build cloned slides for seamless infinite loop (prepend 2 clones from end, append 2 clones from start)
+  const cloneStart1 = initialNoticeSlides[realCount - 2].cloneNode(true);
+  const cloneStart2 = initialNoticeSlides[realCount - 1].cloneNode(true);
+  const cloneEnd1 = initialNoticeSlides[0].cloneNode(true);
+  const cloneEnd2 = initialNoticeSlides[1].cloneNode(true);
+
+  cloneStart1.classList.add('clone');
+  cloneStart2.classList.add('clone');
+  cloneEnd1.classList.add('clone');
+  cloneEnd2.classList.add('clone');
+
+  noticeTrack.insertBefore(cloneStart2, noticeTrack.firstChild);
+  noticeTrack.insertBefore(cloneStart1, noticeTrack.firstChild);
+  noticeTrack.appendChild(cloneEnd1);
+  noticeTrack.appendChild(cloneEnd2);
+
+  const allNoticeSlides = $$('.notice-slide', noticeTrack);
+  // Virtual index starts at 3 (corresponds to original index 1: Notis Larangan center card)
+  let currVirtualIdx = 3;
+  let isSliding = false;
+
+  function getSlideOffset(idx) {
+    const slide = allNoticeSlides[idx];
+    if (!slide) return 0;
+    const containerWidth = noticeSliderBox.offsetWidth;
+    const slideCenter = slide.offsetLeft + (slide.offsetWidth / 2);
+    return (containerWidth / 2) - slideCenter;
+  }
+
+  function renderNoticeDots() {
+    const d = $('#nd');
+    d.innerHTML = '';
+    const activeRealIdx = (currVirtualIdx - 2 + realCount) % realCount;
+
+    for (let i = 0; i < realCount; i++) {
+      const b = document.createElement('button');
+      b.className = i === activeRealIdx ? 'on' : '';
+      b.setAttribute('aria-label', `Notis ${i + 1}`);
+      b.onclick = () => {
+        if (isSliding) return;
+        moveToSlide(i + 2, true);
+        resetNoticeAutoTimer();
+      };
+      d.appendChild(b);
+    }
+  }
+
+  function setTrackPosition(idx, withTransition = true) {
+    allNoticeSlides.forEach((s, i) => {
+      s.classList.toggle('active', i === idx);
+    });
+
+    const targetOffset = getSlideOffset(idx);
+    noticeTrack.style.transition = withTransition ? 'transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1)' : 'none';
+    noticeTrack.style.transform = `translateX(${targetOffset}px)`;
+    renderNoticeDots();
+  }
+
+  function moveToSlide(idx, withTransition = true) {
+    if (isSliding && withTransition) return;
+    isSliding = withTransition;
+    currVirtualIdx = idx;
+    setTrackPosition(currVirtualIdx, withTransition);
+  }
+
+  noticeTrack.addEventListener('transitionend', () => {
+    isSliding = false;
+    // When virtual index moves beyond real bounds, snap seamlessly without transition
+    if (currVirtualIdx >= realCount + 2) {
+      currVirtualIdx = currVirtualIdx - realCount;
+      setTrackPosition(currVirtualIdx, false);
+    } else if (currVirtualIdx < 2) {
+      currVirtualIdx = currVirtualIdx + realCount;
+      setTrackPosition(currVirtualIdx, false);
+    }
+  });
+
+  function slideNoticeDir(dir) {
+    if (isSliding) return;
+    moveToSlide(currVirtualIdx + dir, true);
+  }
+
+  // Infinite Auto-Play Timer: stops at center for 10 seconds
+  let noticeAutoTimer = null;
+  function resetNoticeAutoTimer() {
+    if (noticeAutoTimer) clearInterval(noticeAutoTimer);
+    noticeAutoTimer = setInterval(() => slideNoticeDir(1), 10000);
+  }
+  resetNoticeAutoTimer();
+
+  $('#btn-notice-prev').onclick = () => {
+    slideNoticeDir(-1);
+    resetNoticeAutoTimer();
+  };
+  $('#btn-notice-next').onclick = () => {
+    slideNoticeDir(1);
+    resetNoticeAutoTimer();
+  };
+
+  // Clicking directly on adjacent peeking slides moves to that slide
+  allNoticeSlides.forEach((slide, idx) => {
+    slide.onclick = e => {
+      if (idx !== currVirtualIdx && !e.target.closest('[data-modal]')) {
+        moveToSlide(idx, true);
+        resetNoticeAutoTimer();
+      }
+    };
+  });
+
+  // Pause on hover, resume 10-second timer on mouse leave
+  noticeSliderBox.addEventListener('mouseenter', () => {
+    if (noticeAutoTimer) clearInterval(noticeAutoTimer);
+  });
+  noticeSliderBox.addEventListener('mouseleave', () => {
+    resetNoticeAutoTimer();
+  });
+
+  window.addEventListener('resize', () => setTrackPosition(currVirtualIdx, false));
+  setTimeout(() => setTrackPosition(currVirtualIdx, false), 60);
+
+  /* Visitor Counter Auto-Increment */
+  let visitorCount = 1453;
+  setInterval(() => {
+    $('#v1').textContent = ++visitorCount;
+  }, 15000);
+
+})();
+</script>
+</body>
+</html>
